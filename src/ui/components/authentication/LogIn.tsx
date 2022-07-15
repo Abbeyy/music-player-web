@@ -4,9 +4,9 @@ import {
   CLIENT_ID,
   REDIRECT_URI,
   RESPONSE_TYPE,
-} from "../../constants/auth";
-import { useAppDispatch } from "../../hooks";
-import { setToken } from "../../redux/reducers/authSlice";
+} from "../../../constants/auth";
+import { useAppDispatch } from "../../../hooks";
+import { setToken } from "../../../redux/reducers/authSlice";
 
 const LogIn = () => {
   const dispatch = useAppDispatch();

@@ -1,0 +1,11 @@
+.Welcome {
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    background-color: white;
+    color: black;
+}
+
+.ContentWrapper {
+    margin: 1rem;
+}

@@ -1,5 +1,5 @@
-import { useAppDispatch } from "../../hooks";
-import { setToken } from "../../redux/reducers/authSlice";
+import { useAppDispatch } from "../../../hooks";
+import { setToken } from "../../../redux/reducers/authSlice";
 
 const LogOut = () => {
   const dispatch = useAppDispatch();
