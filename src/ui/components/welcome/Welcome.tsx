@@ -1,9 +1,7 @@
 import { useAppSelector } from "../../../hooks";
-import { isLoggedInSelector } from "../../../redux/selectors/auth";
 import { topicSelector } from "../../../redux/selectors/welcome";
 import { Topic } from "../../../types/redux/state/welcome";
-import LogIn from "../authentication/LogIn";
-import LogOut from "../authentication/LogOut";
+
 import WelcomeMenu from "../navigation/WelcomeMenu";
 import AlbumsExplore from "./albums/AlbumsExplore";
 import ArtistsExplore from "./artists/ArtistsExplore";
@@ -13,7 +11,6 @@ import styles from "./Welcome.module.css";
 import WelcomeHome from "./WelcomeHome";
 
 const Welcome = () => {
-  const isLoggedIn = useAppSelector(isLoggedInSelector);
   const currentTopic = useAppSelector(topicSelector);
 
   let content: JSX.Element | undefined = undefined;
@@ -39,7 +36,6 @@ const Welcome = () => {
 
   return (
     <div className={styles["Welcome"]}>
-      {isLoggedIn ? <LogOut /> : <LogIn />}
       <WelcomeMenu />
       <div className={styles["ContentWrapper"]}>{content}</div>
     </div>

@@ -1,15 +1,24 @@
 import { Link } from "react-router-dom";
+import { useAppSelector } from "../../../hooks";
+import { isLoggedInSelector } from "../../../redux/selectors/auth";
+import LogIn from "../authentication/LogIn";
+import LogOut from "../authentication/LogOut";
 import styles from "./NavigationMenu.module.css";
 
-const NavigationBar = () => (
-  <div className={styles["Sidebar"]}>
-    <h1 className={styles["Title"]}>My Player</h1>
-    <div className={styles["Menu"]}>
-      <Link className={styles["Link"]} to="/">
-        Welcome
-      </Link>
+const NavigationBar = () => {
+  const isLoggedIn = useAppSelector(isLoggedInSelector);
+
+  return (
+    <div className={styles["Sidebar"]}>
+      <h1 className={styles["Title"]}>My Player</h1>
+      {isLoggedIn ? <LogOut /> : <LogIn />}
+      <div className={styles["Menu"]}>
+        <Link className={styles["Link"]} to="/">
+          Welcome
+        </Link>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default NavigationBar;

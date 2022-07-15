@@ -8,6 +8,8 @@ import {
 import { useAppDispatch } from "../../../hooks";
 import { setToken } from "../../../redux/reducers/authSlice";
 
+import styles from "./Auth.module.css";
+
 const LogIn = () => {
   const dispatch = useAppDispatch();
 
@@ -39,6 +41,7 @@ const LogIn = () => {
 
   return (
     <a
+      className={styles["LogButton"]}
       href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
     >
       Log Into Spotify
