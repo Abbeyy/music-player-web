@@ -1,24 +1,29 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { AuthState } from "../../types/redux/state/auth";
+import { CurrentUser } from "../../types/users";
 
 export const initialState: AuthState = {
-  token: null,
+  currentUser: null,
   error: undefined,
+  token: null,
 };
 
 export const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    setToken: (state, action: PayloadAction<string | null>) => {
-      state.token = action.payload;
+    setCurrentUser: (state, action: PayloadAction<CurrentUser | null>) => {
+      state.currentUser = action.payload;
     },
     setError: (state, action: PayloadAction<string>) => {
       state.error = action.payload;
     },
+    setToken: (state, action: PayloadAction<string | null>) => {
+      state.token = action.payload;
+    },
   },
 });
 
-export const { setToken, setError } = authSlice.actions;
+export const { setCurrentUser, setError, setToken } = authSlice.actions;
 
 export default authSlice.reducer;

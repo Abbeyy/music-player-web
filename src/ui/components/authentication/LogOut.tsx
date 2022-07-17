@@ -1,5 +1,5 @@
 import { useAppDispatch } from "../../../hooks";
-import { setToken } from "../../../redux/reducers/authSlice";
+import { logUserOut } from "../../../thunk/logUserOut";
 
 import styles from "./Auth.module.css";
 
@@ -7,8 +7,7 @@ const LogOut = () => {
   const dispatch = useAppDispatch();
 
   const logout = () => {
-    window.localStorage.removeItem("token");
-    dispatch(setToken(null));
+    dispatch(logUserOut());
   };
 
   return (

@@ -6,7 +6,7 @@ import {
   RESPONSE_TYPE,
 } from "../../../constants/auth";
 import { useAppDispatch } from "../../../hooks";
-import { setToken } from "../../../redux/reducers/authSlice";
+import { logUserIn } from "../../../thunk/logUserIn";
 
 import styles from "./Auth.module.css";
 
@@ -14,29 +14,7 @@ const LogIn = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    const hash = window.location.hash;
-    let token = window.localStorage.getItem("token");
-
-    if (!token && hash) {
-      const hashExtracted = hash
-        .substring(1)
-        .split("&")
-        .find((elem) => elem.startsWith("access_token"));
-
-      token = hashExtracted?.split("=")[1] ?? null;
-
-      if (token) {
-        window.location.hash = "";
-        window.localStorage.setItem("token", token);
-      } else {
-        console.warn("Error when extracting token.");
-        return;
-      }
-    }
-
-    if (token) {
-      dispatch(setToken(token));
-    }
+    dispatch(logUserIn());
   }, []);
 
   return (

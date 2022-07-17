@@ -1,3 +1,5 @@
+import { ExternalURL, Followers, Image } from ".";
+
 export type Artist = {
   external_urls: ExternalURL;
   followers: Followers;
@@ -9,17 +11,4 @@ export type Artist = {
   popularity: number;
   type: "artist";
   uri: string;
-};
-
-type ExternalURL = { spotify: string };
-
-type Followers = {
-  href: string;
-  total: number;
-};
-
-type Image = {
-  url: string;
-  height: number;
-  width: number;
 };
