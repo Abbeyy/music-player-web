@@ -32,14 +32,16 @@ const ArtistsSearch = () => {
   }
 
   return (
-    <input
-      placeholder="Start typing..."
-      className={styles["SearchInput"]}
-      type="text"
-      value={searchValue}
-      onChange={onChangeSearch}
-      onKeyDown={onKeyDown}
-    />
+    <div className={styles["PanelElement"]}>
+      <input
+        placeholder="Start typing..."
+        className={styles["SearchInput"]}
+        type="text"
+        value={searchValue}
+        onChange={onChangeSearch}
+        onKeyDown={onKeyDown}
+      />
+    </div>
   );
 };
 
