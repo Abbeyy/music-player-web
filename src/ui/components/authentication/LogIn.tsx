@@ -1,5 +1,5 @@
-import { useAppDispatch, useAppSelector } from "../../../hooks";
-import { tokenSelector } from "../../../redux/selectors/auth";
+import { useEffect } from "react";
+import { useAppDispatch } from "../../../hooks";
 import { takeUserToExternalAuthentication } from "../../../thunk/logUserIn";
 import { setupForLoggingIn } from "../../../thunk/setupForLoggingIn";
 
@@ -8,15 +8,12 @@ import styles from "./Auth.module.css";
 const LogIn = () => {
   const dispatch = useAppDispatch();
 
-  const token = useAppSelector(tokenSelector);
+  useEffect(() => {
+    dispatch(setupForLoggingIn());
+  }, []);
 
   const handleLogin = () => {
-    if (token) {
-      dispatch(takeUserToExternalAuthentication());
-      dispatch(setupForLoggingIn());
-    } else {
-      console.log("User has a valid token.");
-    }
+    dispatch(takeUserToExternalAuthentication());
   };
 
   return (
