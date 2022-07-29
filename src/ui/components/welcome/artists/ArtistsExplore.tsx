@@ -11,9 +11,7 @@ const ArtistsExplore = () => {
   const artists = useAppSelector(artistsSelector);
 
   const artistPreviews = artists.map((currentArtist) => (
-    <div className={styles["ArtistPreviewPanel"]}>
-      <ArtistPreview artist={currentArtist} />
-    </div>
+    <ArtistPreview artist={currentArtist} />
   ));
 
   return (
@@ -25,7 +23,9 @@ const ArtistsExplore = () => {
         </div>
       </div>
 
-      {artists.length ? <>{artistPreviews}</> : null}
+      {artists.length ? (
+        <div className={styles["ArtistResults"]}>{artistPreviews}</div>
+      ) : null}
     </>
   );
 };

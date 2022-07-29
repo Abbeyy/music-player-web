@@ -1,9 +1,10 @@
 .SearchInput {
     background-color: white;
-    color: #e66465;
+    color: #8E78F4;
     font-weight: 600;
     border: none;
     padding: 0.4rem;
+    padding-left: 0.8rem;
     border-radius: 0.75rem;
 }
 
@@ -17,7 +18,7 @@
 
 .Panel {
     flex-direction: column;
-    background: linear-gradient(20deg, #e66465, #9198e5);
+    background: linear-gradient(20deg, #a7d2fc, #8E78F4);
     font-weight: 700;
     color: white;
     padding: 0.75rem;
@@ -34,26 +35,34 @@
 
 .ArtistPreview {
     flex-direction: column;
-    background-color: white;
-    color: #8BC5FF;
-    font-weight: 700;
-    margin: 1rem;
-    padding: 0.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    border-radius: 0.75rem;
-}
-
-.ArtistPreviewPanel {
-    background: linear-gradient(20deg, #e66465, #9198e5);
-    font-weight: 700;
+    background-color: #e66465;
     color: white;
-    padding: 0.5rem;
+    font-weight: 700;
+    padding: 1.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin: 1rem;
     border-radius: 0.75rem;
-    margin-bottom: 1rem;
 }
 
 .Row {
     display: flex;
     justify-content: space-evenly;
+}
+
+.ArtistName {
+    font-size: 25px;
+    margin-bottom: 0.5rem;
+}
+
+.ArtistInfo {
+    font-size: 12px;
+    margin: 0.1rem;
+}
+
+.ArtistResults {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }

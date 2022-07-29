@@ -7,6 +7,7 @@ export const searchArtists =
   (searchValue: string): AppThunk =>
   async (dispatch, getState) => {
     dispatch(setLoading(true));
+    //add error state
 
     try {
       const token = tokenSelector(getState());

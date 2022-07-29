@@ -26,8 +26,9 @@
 }
 
 .Sidebar {
-    background: linear-gradient(20deg, #e66465, #9198e5);
+    background-color: #e66465;
     margin: 0;
+    margin-right: 0.03rem;
     padding: 0.5rem;
     display: flex;
     flex-direction: column;

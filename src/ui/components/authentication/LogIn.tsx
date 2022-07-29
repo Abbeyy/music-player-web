@@ -28,3 +28,6 @@ const LogIn = () => {
 };
 
 export default LogIn;
+
+//Login creds page to make auth api call myself
+//NextJS react hosting for deploying

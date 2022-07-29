@@ -1,8 +1,9 @@
 .Option {
-    background: linear-gradient(20deg, #e66465, #9198e5);
+    background-color: #e66465;
     font-weight: 700;
     color: white;
     padding: 0.5rem;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
+    margin: 0.4rem;
 }
