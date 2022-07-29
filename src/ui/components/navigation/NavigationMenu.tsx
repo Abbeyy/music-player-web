@@ -13,8 +13,11 @@ const NavigationBar = () => {
       <h1 className={styles["Title"]}>My Player</h1>
       {isLoggedIn ? <LogOut /> : <LogIn />}
       <div className={styles["Menu"]}>
-        <Link className={styles["Link"]} to="/">
+        <Link className={styles["Option"]} to="/">
           Welcome
+        </Link>
+        <Link className={styles["Option"]} to="/me">
+          Me
         </Link>
       </div>
     </div>

@@ -1,0 +1,7 @@
+.Me {
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    background-color: #e37878;
+    color: black;
+}

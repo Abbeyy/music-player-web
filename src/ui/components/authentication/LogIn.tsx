@@ -17,9 +17,11 @@ const LogIn = () => {
   };
 
   return (
-    <button className={styles["LogButton"]} onClick={handleLogin}>
-      Log Into Spotify
-    </button>
+    <div className={styles["LogButtonWrapper"]}>
+      <button className={styles["LogButton"]} onClick={handleLogin}>
+        Log Into Spotify
+      </button>
+    </div>
   );
 };
 

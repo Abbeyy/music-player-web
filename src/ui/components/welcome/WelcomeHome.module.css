@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 .WelcomeHome {
     text-align: center;
+}
+
+.WelcomeTitle {
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 5rem;
 }

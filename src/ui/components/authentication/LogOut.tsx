@@ -11,9 +11,11 @@ const LogOut = () => {
   };
 
   return (
-    <button className={styles["LogButton"]} onClick={logout}>
-      Log Out
-    </button>
+    <div className={styles["LogButtonWrapper"]}>
+      <button className={styles["LogButton"]} onClick={logout}>
+        Log Out
+      </button>
+    </div>
   );
 };
 

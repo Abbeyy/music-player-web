@@ -28,7 +28,9 @@ export const ArtistPreview = (props: Props) => {
         }}
         alt="Artist"
       />
-      <p className={styles["ArtistName"]}>{name}</p>
+      <div className={styles["ArtistNameWrapper"]}>
+        <p className={styles["ArtistName"]}>{name}</p>
+      </div>
       <p className={styles["ArtistInfo"]}>{`${popularity} popularity score`}</p>
       <p className={styles["ArtistInfo"]}>{`${followers.total} followers`}</p>
       <p className={styles["ArtistInfo"]}>{genresFormatted}</p>

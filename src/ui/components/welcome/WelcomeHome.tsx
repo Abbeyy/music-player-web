@@ -7,7 +7,7 @@ const WelcomeHome = () => {
 
   return (
     <div className={styles["WelcomeHome"]}>
-      <h1>{`Welcome Home ${name ?? ""}`}</h1>
+      <h1 className={styles["WelcomeTitle"]}>{`WELCOME HOME ${name ?? ""}`}</h1>
     </div>
   );
 };

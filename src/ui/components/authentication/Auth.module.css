@@ -1,12 +1,20 @@
 .LogButton {
     font-weight: 700;
-    text-align: center;
-    margin: 0.5rem;
-    margin-bottom: 1rem;
-    padding: 0;
     background: none;
-    color: white;
-    font-size: 1.1rem;
-    letter-spacing: .1rem;
-    font-style: italic;
+	text-transform: uppercase;
+	background: linear-gradient(20deg, #30CFD0 0%, #8E78F4 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;    font-size: 1.2rem;
+    letter-spacing: -0.1rem;
+}
+
+
+.LogButtonWrapper {
+    text-align: center;
+    align-self: center;
+    width: 7rem;
+    margin-bottom: 1rem;
+
+    border-radius: 10px;
+	background: linear-gradient(to right, #FDFBFB, #EBEDEE 70%);
 }

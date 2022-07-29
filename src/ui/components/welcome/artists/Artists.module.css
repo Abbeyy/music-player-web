@@ -50,13 +50,26 @@
     justify-content: space-evenly;
 }
 
+::selection {
+    background-color: #C3CFE2;
+}
+
+.ArtistNameWrapper {
+	align-items: center;
+	justify-content: center;
+}
+
 .ArtistName {
+	text-transform: uppercase;
+	background: linear-gradient(20deg, #30CFD0 0%, #8E78F4 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
     font-size: 25px;
     margin-bottom: 0.5rem;
 }
 
 .ArtistInfo {
-    font-size: 12px;
+    font-size: 14px;
     margin: 0.1rem;
 }
 
