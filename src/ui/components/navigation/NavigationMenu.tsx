@@ -14,7 +14,7 @@ const NavigationBar = () => {
       {isLoggedIn ? <LogOut /> : <LogIn />}
       <div className={styles["Menu"]}>
         <Link className={styles["Option"]} to="/">
-          Welcome
+          Explore
         </Link>
         <Link className={styles["Option"]} to="/me">
           Me
