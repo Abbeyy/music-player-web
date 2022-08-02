@@ -1,9 +1,9 @@
-import { useAppSelector } from "../../../../hooks";
-import { isLoggedInSelector } from "../../../../redux/selectors/auth";
+import { useAppSelector } from "../../../hooks";
+import { isLoggedInSelector } from "../../../redux/selectors/auth";
 import ArtistsSearch from "./ArtistsSearch";
 
 import styles from "./Artists.module.css";
-import { artistsSelector } from "../../../../redux/selectors/search";
+import { artistsSelector } from "../../../redux/selectors/search";
 import { ArtistPreview } from "./ArtistPreview";
 
 const ArtistsExplore = () => {

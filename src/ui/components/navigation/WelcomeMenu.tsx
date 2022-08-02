@@ -1,11 +1,14 @@
-import { useAppDispatch } from "../../../hooks";
+import { useAppDispatch, useAppSelector } from "../../../hooks";
 import { setTopic } from "../../../redux/reducers/welcomeSlice";
+import { isLoggedInSelector } from "../../../redux/selectors/auth";
 import { Topic } from "../../../types/redux/state/welcome";
 
 import styles from "./WelcomeMenu.module.css";
 
 const WelcomeMenu = () => {
   const dispatch = useAppDispatch();
+
+  const isLoggedIn = useAppSelector(isLoggedInSelector);
 
   const changeTopic = (newTopic: Topic) => {
     dispatch(setTopic(newTopic));
@@ -26,6 +29,10 @@ const WelcomeMenu = () => {
   const changeToTracks = () => {
     changeTopic(Topic.TRACKS);
   };
+
+  if (!isLoggedIn) {
+    return null;
+  }
 
   return (
     <ul>

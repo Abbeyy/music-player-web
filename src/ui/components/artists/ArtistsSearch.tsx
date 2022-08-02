@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../../../hooks";
-import { setArtistsSearch } from "../../../../redux/reducers/searchSlice";
-import { isLoggedInSelector } from "../../../../redux/selectors/auth";
-import { searchArtists } from "../../../../thunk/searchArtists";
+import { useAppDispatch, useAppSelector } from "../../../hooks";
+import { setArtistsSearch } from "../../../redux/reducers/searchSlice";
+import { isLoggedInSelector } from "../../../redux/selectors/auth";
+import { searchArtists } from "../../../thunk/searchArtists";
 
 import styles from "./Artists.module.css";
 

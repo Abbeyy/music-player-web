@@ -10,16 +10,18 @@ const NavigationBar = () => {
 
   return (
     <div className={styles["Sidebar"]}>
-      <h1 className={styles["Title"]}>My Player</h1>
       {isLoggedIn ? <LogOut /> : <LogIn />}
-      <div className={styles["Menu"]}>
-        <Link className={styles["Option"]} to="/">
-          Explore
-        </Link>
-        <Link className={styles["Option"]} to="/me">
-          Me
-        </Link>
-      </div>
+      <h1 className={styles["Title"]}>My Player</h1>
+      {isLoggedIn ? (
+        <div className={styles["Menu"]}>
+          <Link className={styles["Option"]} to="/">
+            Explore
+          </Link>
+          <Link className={styles["Option"]} to="/me">
+            Me
+          </Link>
+        </div>
+      ) : null}
     </div>
   );
 };

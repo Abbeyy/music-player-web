@@ -8,18 +8,24 @@ import NavigationMenu from "./ui/components/navigation/NavigationMenu";
 import styles from "./AppRoot.module.css";
 import Welcome from "./ui/components/welcome/Welcome";
 import Me from "./ui/components/me/Me";
+import { useAppSelector } from "./hooks";
+import { isLoggedInSelector } from "./redux/selectors/auth";
 
-const AppRoot = () => (
-  <Router>
-    <div className={styles["AppRoot"]}>
-      <NavigationMenu />
+const AppRoot = () => {
+  const isLoggedIn = useAppSelector(isLoggedInSelector);
 
-      <Switch>
-        <Route path="/" element={<Welcome />} />
-        <Route path="/me" element={<Me />} />
-      </Switch>
-    </div>
-  </Router>
-);
+  return (
+    <Router>
+      <div className={styles["AppRoot"]}>
+        <NavigationMenu />
+
+        <Switch>
+          <Route path="/" element={<Welcome />} />
+          <Route path="/me" element={isLoggedIn ? <Me /> : <Welcome />} />
+        </Switch>
+      </div>
+    </Router>
+  );
+};
 
 export default AppRoot;

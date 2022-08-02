@@ -21,17 +21,17 @@
     flex-direction: column;
     background-color: #e37878;
     border-radius: 10px;
-    padding: 1rem;
-    padding-left: 15%;
-    padding-right: 15%;
+    padding: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
     align-self: center;
 }
 
 .Title {
     color: white;
     font-family: 'Permanent Marker', cursive;
-    font-size: 2.5rem;
-    align-self: center;
+    font-size: 2.2rem;
+    text-align: center;
     font-weight: 700;
     padding: 0.5rem;
     margin: 0.5rem;
@@ -44,6 +44,8 @@
     margin: 0;
     margin-right: 0.03rem;
     padding: 0.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
     flex: 1;

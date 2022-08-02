@@ -3,9 +3,9 @@ import { topicSelector } from "../../../redux/selectors/welcome";
 import { Topic } from "../../../types/redux/state/welcome";
 
 import WelcomeMenu from "../navigation/WelcomeMenu";
-import AlbumsExplore from "./albums/AlbumsExplore";
-import ArtistsExplore from "./artists/ArtistsExplore";
-import TracksExplore from "./tracks/TracksExplore";
+import AlbumsExplore from "../albums/AlbumsExplore";
+import ArtistsExplore from "../artists/ArtistsExplore";
+import TracksExplore from "../tracks/TracksExplore";
 
 import styles from "./Welcome.module.css";
 import WelcomeHome from "./WelcomeHome";

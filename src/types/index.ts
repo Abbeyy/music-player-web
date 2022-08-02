@@ -16,3 +16,9 @@ export type Image = {
   height: number;
   width: number;
 };
+
+export enum RESTRICTION {
+  MARKET = "market",
+  PRODUCT = "product",
+  EXPLICIT = "explicit",
+}

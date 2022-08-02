@@ -1,6 +1,7 @@
 import { useAppSelector } from "../../../hooks";
 import { currentUserSelector } from "../../../redux/selectors/auth";
 import styles from "./Me.module.css";
+import TopTracks from "./top-items/TopTracks";
 
 const size = 250;
 
@@ -35,9 +36,11 @@ const Me = () => {
       </div>
 
       <div className={styles["Music"]}>
+        <TopTracks />
         <p className={styles["Title"]}>Top Artists This Month</p>
-        <p className={styles["Title"]}>Top Tracks This Month</p>
+        <p>...</p>
         <p className={styles["Title"]}>Public Playlists</p>
+        <p>...</p>
       </div>
     </div>
   );

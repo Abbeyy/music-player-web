@@ -2,10 +2,23 @@
 
 .WelcomeHome {
     text-align: center;
+    padding: 1rem;
 }
 
 .WelcomeTitle {
     color: white;
     font-family: 'Permanent Marker', cursive;
-    font-size: 5rem;
+    font-size:4rem;
+}
+
+.LoginOrSignUp {
+    font-size: 14px;
+    margin: 0.1rem;
+    color: white;
+    letter-spacing: 0rem;
+}
+
+.SignUp {
+    font-weight: 800;
+    text-decoration: underline;
 }

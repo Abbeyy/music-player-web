@@ -1,4 +1,4 @@
-import { Artist } from "../../../../types/artist";
+import { Artist } from "../../../types/artist";
 
 import styles from "./Artists.module.css";
 
