@@ -22,7 +22,9 @@ export const ArtistPreview = (props: Props) => {
         src={pp.url}
         style={{
           width: size,
-          height: undefined,
+          height: size,
+          objectFit: "cover",
+          objectPosition: "100% 0%",
           aspectRatio: "auto",
           borderRadius: 100,
         }}
