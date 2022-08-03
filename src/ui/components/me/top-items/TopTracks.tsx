@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../../../hooks";
 import { topTracksSelector } from "../../../../redux/selectors/topItems";
-import { getUsersTopTracks } from "../../../../thunk/getUsersTopTracks";
+import { getUsersTopTracks } from "../../../../thunk/top-items/getUsersTopTracks";
 import TrackPreview from "../../tracks/welcome/TrackPreview";
 import styles from "./TopItems.module.css";
 
@@ -20,12 +20,12 @@ const TopTracks = () => {
   }, []);
 
   const trackPreviewsShowMore = () =>
-    allTracks
+    allTracks?.length
       ? allTracks.map((topTrack) => <TrackPreview track={topTrack} />)
       : null;
 
   const trackPreviewsShowLess = () =>
-    lessTracks
+    lessTracks?.length
       ? lessTracks.map((topTrack) => <TrackPreview track={topTrack} />)
       : null;
 

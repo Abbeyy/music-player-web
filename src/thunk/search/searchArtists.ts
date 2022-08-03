@@ -1,7 +1,7 @@
-import { queryArtists } from "../api/artists";
-import { setLoading, setArtistsSearch } from "../redux/reducers/searchSlice";
-import { tokenSelector } from "../redux/selectors/auth";
-import { AppThunk } from "../types/redux/store";
+import { queryArtists } from "../../api/artists";
+import { setLoading, setArtistsSearch } from "../../redux/reducers/searchSlice";
+import { tokenSelector } from "../../redux/selectors/auth";
+import { AppThunk } from "../../types/redux/store";
 
 export const searchArtists =
   (searchValue: string): AppThunk =>
