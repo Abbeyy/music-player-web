@@ -16,7 +16,9 @@ const Me = () => {
           src={pp?.url}
           style={{
             width: size,
-            height: undefined,
+            height: size,
+            objectFit: "cover",
+            objectPosition: "100% 0%",
             aspectRatio: "auto",
             borderRadius: 150,
             padding: 30,
