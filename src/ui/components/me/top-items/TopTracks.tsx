@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../../../hooks";
 import { topTracksSelector } from "../../../../redux/selectors/topItems";
 import { getUsersTopTracks } from "../../../../thunk/top-items/getUsersTopTracks";
-import TrackPreview from "../../tracks/welcome/TrackPreview";
+import TrackPreview from "../../tracks/TrackPreview";
 import styles from "./TopItems.module.css";
 
 const TopTracks = () => {

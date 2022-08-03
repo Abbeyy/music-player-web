@@ -1,0 +1,22 @@
+.SearchInput {
+    background-color: white;
+    color: #8E78F4;
+    font-weight: 600;
+    border: none;
+    padding: 0.4rem;
+    padding-left: 0.8rem;
+    border-radius: 0.75rem;
+}
+
+.SearchInput::placeholder {
+    padding-left: 0.5rem;
+}
+
+.SearchInput:focus {
+    outline: none;
+}
+
+.PanelElement {
+    margin: 1rem;
+    align-self: center;
+}

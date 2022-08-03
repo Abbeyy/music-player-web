@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../../../hooks";
 import { topArtistsSelector } from "../../../../redux/selectors/topItems";
 import { getUsersTopArtists } from "../../../../thunk/top-items/getUsersTopArtists";
 import { ArtistPreview } from "../../artists/ArtistPreview";
-import TrackPreview from "../../tracks/welcome/TrackPreview";
+import TrackPreview from "../../tracks/TrackPreview";
 import styles from "./TopItems.module.css";
 
 const TopArtists = () => {

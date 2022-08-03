@@ -1,3 +1,45 @@
+.TrackPreview {
+    display: flex;
+    flex-direction: column;
+    background-color: #e66465;
+    color: white;
+    font-weight: 700;
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 0.75rem;
+    max-width: 15rem;
+    min-width: 8rem;
+}
+
+.Row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+::selection {
+    background-color: #C3CFE2;
+}
+
+.TrackNameWrapper {
+	align-items: center;
+	justify-content: center;
+}
+
+.TrackName {
+	text-transform: uppercase;
+	background: linear-gradient(20deg, #30CFD0 0%, #8E78F4 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    font-size: 25px;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+.TrackInfo {
+    font-size: 14px;
+    margin: 0.1rem;
+}
+
 .Panel {
     flex-direction: column;
     background: linear-gradient(20deg, #a7d2fc, #8E78F4);
@@ -15,7 +57,7 @@
     align-self: center;
 }
 
-.ArtistPreview {
+.TrackPreview {
     flex-direction: column;
     background-color: #e66465;
     color: white;
@@ -38,12 +80,12 @@
     background-color: #C3CFE2;
 }
 
-.ArtistNameWrapper {
+.TrackNameWrapper {
 	align-items: center;
 	justify-content: center;
 }
 
-.ArtistName {
+.TrackName {
 	text-transform: uppercase;
 	background: linear-gradient(20deg, #30CFD0 0%, #8E78F4 100%);
 	-webkit-background-clip: text;
@@ -52,13 +94,13 @@
     margin-bottom: 0.5rem;
 }
 
-.ArtistInfo {
+.TrackInfo {
     font-size: 14px;
     margin: 0.1rem;
     flex-wrap: wrap;
 }
 
-.ArtistResults {
+.TrackResults {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;

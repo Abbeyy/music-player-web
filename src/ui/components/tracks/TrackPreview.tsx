@@ -1,5 +1,5 @@
-import { Track } from "../../../../types/track";
-import styles from "./TrackPreview.module.css";
+import { Track } from "../../../types/track";
+import styles from "./Tracks.module.css";
 
 type Props = {
   track: Track;

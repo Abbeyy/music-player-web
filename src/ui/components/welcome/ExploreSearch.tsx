@@ -1,12 +1,24 @@
 import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../../hooks";
-import { setArtistsSearch } from "../../../redux/reducers/searchSlice";
+import {
+  setArtistsSearch,
+  setTracksSearch,
+} from "../../../redux/reducers/searchSlice";
 import { isLoggedInSelector } from "../../../redux/selectors/auth";
 import { searchArtists } from "../../../thunk/search/searchArtists";
+import { searchTracks } from "../../../thunk/search/searchTracks";
 
-import styles from "./Artists.module.css";
+import styles from "./ExploreSearch.module.css";
 
-const ArtistsSearch = () => {
+type SearchItem = "artists" | "tracks" | "albums";
+
+type Props = {
+  item: SearchItem;
+};
+
+const ExploreSearch = (props: Props) => {
+  const { item } = props;
+
   const dispatch = useAppDispatch();
 
   const isLoggedIn = useAppSelector(isLoggedInSelector);
@@ -20,9 +32,31 @@ const ArtistsSearch = () => {
   const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       if (!searchValue.length) {
-        dispatch(setArtistsSearch([]));
+        switch (item) {
+          case "artists":
+            dispatch(setArtistsSearch([]));
+            break;
+          case "tracks":
+            dispatch(setTracksSearch([]));
+            break;
+          case "albums":
+            break;
+          default:
+            break;
+        }
       } else {
-        dispatch(searchArtists(searchValue));
+        switch (item) {
+          case "artists":
+            dispatch(searchArtists(searchValue));
+            break;
+          case "tracks":
+            dispatch(searchTracks(searchValue));
+            break;
+          case "albums":
+            break;
+          default:
+            break;
+        }
       }
     }
   };
@@ -45,4 +79,4 @@ const ArtistsSearch = () => {
   );
 };
 
-export default ArtistsSearch;
+export default ExploreSearch;
