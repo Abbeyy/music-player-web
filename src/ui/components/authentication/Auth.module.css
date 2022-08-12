@@ -2,10 +2,9 @@
     font-weight: 700;
     background: none;
 	text-transform: uppercase;
-	background: linear-gradient(20deg, #30CFD0 0%, #8E78F4 100%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;    font-size: 1.2rem;
+    color: #8BC5FF;
     letter-spacing: -0.1rem;
+    font-size: 20px;
 }
 
 

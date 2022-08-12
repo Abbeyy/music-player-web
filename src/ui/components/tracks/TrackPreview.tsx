@@ -17,7 +17,7 @@ const TrackPreview = (props: Props) => {
       <div className={styles["TrackNameWrapper"]}>
         <p className={styles["TrackName"]}>{name}</p>
       </div>
-      {explicit ? <p className={styles["TrackInfo"]}>E</p> : null}
+      {explicit ? <p className={styles["TrackRating"]}>E</p> : null}
       <p className={styles["TrackInfo"]}>Featuring {artistsFormatted}</p>
       <p className={styles["TrackInfo"]}>{popularity} ♥</p>
     </div>

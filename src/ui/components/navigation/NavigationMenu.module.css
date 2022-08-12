@@ -43,9 +43,10 @@
     background-color: #e66465;
     margin: 0;
     padding: 0.5rem;
-    padding-top: 2rem;
+    padding-top: 2.7rem;
     padding-bottom: 2rem;
+    min-width: 10rem;
     display: flex;
     flex-direction: column;
-    flex: 1;
+    flex: 0;
 }

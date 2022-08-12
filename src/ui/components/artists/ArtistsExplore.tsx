@@ -18,7 +18,7 @@ const ArtistsExplore = () => {
     <>
       <div className={styles["Panel"]}>
         <div className={styles["Row"]}>
-          <div className={styles["PanelElement"]}>Artists Explore</div>
+          <div className={styles["PanelElement"]}>Explore Artists</div>
           {isLoggedIn ? <ExploreSearch item="artists" /> : null}
         </div>
       </div>

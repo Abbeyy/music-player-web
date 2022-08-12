@@ -68,7 +68,7 @@ const ExploreSearch = (props: Props) => {
   return (
     <div className={styles["PanelElement"]}>
       <input
-        placeholder="Start typing..."
+        placeholder="Start typing"
         className={styles["SearchInput"]}
         type="text"
         value={searchValue}
