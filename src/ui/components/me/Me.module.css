@@ -1,16 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
-.Me {
+.MeWrapper {
     display: flex;
     flex: 3;
     flex-direction: column;
-    background-color: #e37878;
-    color: black;
+    background-color: #e66465;
+}
+
+.Me {
+    margin: 1rem;
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    background-color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 .Panel {
     display: flex;
-    padding-top: 5rem;
+    padding-top: 3rem;
+    margin-right: 3rem;
+    margin-left: 3rem;
+    border-bottom: 0.03rem solid #e66465;
 }
 
 .Info {
@@ -22,7 +34,7 @@
 }
 
 .Detail {
-    color: white;
+    color: #e66465;
     font-size: 14px;
     letter-spacing: 0rem;
     margin: 0;
@@ -30,7 +42,7 @@
 }
 
 .Name {
-    color: white;
+    color: #e66465;
     font-family: 'Permanent Marker', cursive;
     font-size: 5rem;
     align-self: center;
@@ -40,12 +52,13 @@
 }
 
 .Music {
-    padding: 2rem;
-    background: linear-gradient(180deg, #e66e6e 0%, #8BC5FF 100%);
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border-radius: 20px;
 }
 
 .Title {
-    color: white;
+    color: #e66465;
     font-size: 1.5rem;
     font-weight: 700;
 }

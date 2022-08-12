@@ -11,38 +11,41 @@ const Me = () => {
   const pp = user?.images[0];
 
   return (
-    <div className={styles["Me"]}>
-      <div className={styles["Panel"]}>
-        <img
-          src={pp?.url}
-          style={{
-            width: size,
-            height: size,
-            objectFit: "cover",
-            objectPosition: "100% 0%",
-            aspectRatio: "auto",
-            borderRadius: 150,
-            padding: 30,
-          }}
-          alt="Artist"
-        />
-        <div className={styles["Info"]}>
-          <p className={styles["Detail"]}>PROFILE</p>
-          <p className={styles["Name"]}>{user?.display_name}</p>
-          {user?.followers ? (
-            <p
-              className={styles["Detail"]}
-            >{`${user?.followers.total} Followers`}</p>
-          ) : null}
-          <p className={styles["Detail"]}>{user?.country}</p>
+    <div className={styles["MeWrapper"]}>
+      <div className={styles["Me"]}>
+        <div className={styles["Panel"]}>
+          <img
+            src={pp?.url}
+            style={{
+              width: size,
+              height: size,
+              objectFit: "cover",
+              objectPosition: "100% 0%",
+              aspectRatio: "auto",
+              borderRadius: 150,
+              margin: 30,
+              marginLeft: 0,
+            }}
+            alt="Artist"
+          />
+          <div className={styles["Info"]}>
+            <p className={styles["Detail"]}>PROFILE</p>
+            <p className={styles["Name"]}>{user?.display_name}</p>
+            {user?.followers ? (
+              <p
+                className={styles["Detail"]}
+              >{`${user?.followers.total} Followers`}</p>
+            ) : null}
+            <p className={styles["Detail"]}>{user?.country}</p>
+          </div>
         </div>
-      </div>
 
-      <div className={styles["Music"]}>
-        <TopTracks />
-        <TopArtists />
-        <p className={styles["Title"]}>Public Playlists</p>
-        <p>...</p>
+        <div className={styles["Music"]}>
+          <TopTracks />
+          <TopArtists />
+          <p className={styles["Title"]}>Public Playlists</p>
+          <p>...</p>
+        </div>
       </div>
     </div>
   );

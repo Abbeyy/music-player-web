@@ -2,7 +2,7 @@ import { useAppSelector } from "../../../hooks";
 import { topicSelector } from "../../../redux/selectors/welcome";
 import { Topic } from "../../../types/redux/state/welcome";
 
-import WelcomeMenu from "../navigation/WelcomeMenu";
+import WelcomeMenu from "./WelcomeMenu";
 import AlbumsExplore from "../albums/AlbumsExplore";
 import ArtistsExplore from "../artists/ArtistsExplore";
 import TracksExplore from "../tracks/TracksExplore";
@@ -35,9 +35,11 @@ const Welcome = () => {
   }
 
   return (
-    <div className={styles["Welcome"]}>
-      <WelcomeMenu />
-      <div className={styles["ContentWrapper"]}>{content}</div>
+    <div className={styles["WelcomeWrapper"]}>
+      <div className={styles["Welcome"]}>
+        <WelcomeMenu />
+        <div className={styles["ContentWrapper"]}>{content}</div>
+      </div>
     </div>
   );
 };

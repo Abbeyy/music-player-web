@@ -35,7 +35,7 @@ const WelcomeMenu = () => {
   }
 
   return (
-    <ul>
+    <ul className={styles["menu"]}>
       <button className={styles["Option"]} onClick={changeToHome}>
         Home
       </button>

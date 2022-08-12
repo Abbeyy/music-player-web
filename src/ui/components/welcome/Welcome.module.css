@@ -1,11 +1,21 @@
-.Welcome {
+.WelcomeWrapper {
+    background-color: #e66465;
+    padding: 1rem;
     display: flex;
     flex: 3;
+    flex-direction: column
+}
+
+.Welcome {
+    display: flex;
     flex-direction: column;
-    background-color: #e37878;
-    color: black;
+    background-color: white;
+    border-radius: 20px;
 }
 
 .ContentWrapper {
-    margin: 1rem;
+    border-top: 0.03rem solid #e66465;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-top: 1rem;
 }
