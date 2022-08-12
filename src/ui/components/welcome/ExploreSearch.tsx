@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../../hooks";
 import {
+  setAlbumsSearch,
   setArtistsSearch,
   setTracksSearch,
 } from "../../../redux/reducers/searchSlice";
 import { isLoggedInSelector } from "../../../redux/selectors/auth";
+import { searchAlbums } from "../../../thunk/search/searchAlbums";
 import { searchArtists } from "../../../thunk/search/searchArtists";
 import { searchTracks } from "../../../thunk/search/searchTracks";
 
@@ -40,6 +42,7 @@ const ExploreSearch = (props: Props) => {
             dispatch(setTracksSearch([]));
             break;
           case "albums":
+            dispatch(setAlbumsSearch([]));
             break;
           default:
             break;
@@ -53,6 +56,7 @@ const ExploreSearch = (props: Props) => {
             dispatch(searchTracks(searchValue));
             break;
           case "albums":
+            dispatch(searchAlbums(searchValue));
             break;
           default:
             break;

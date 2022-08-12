@@ -45,6 +45,10 @@
     font-size: 25px;
     margin-bottom: 0.5rem;
     margin-top: 0;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .TrackInfo {
@@ -53,6 +57,10 @@
     flex-wrap: wrap;
     color: #e3f0fc;
     letter-spacing: 0.01rem;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .TrackRating {
