@@ -22,3 +22,15 @@ export enum RESTRICTION {
   PRODUCT = "product",
   EXPLICIT = "explicit",
 }
+
+export enum TOP_ITEM {
+  ARTISTS = "artists",
+  TRACKS = "tracks",
+}
+
+export enum TOPIC {
+  ARTISTS = "artists",
+  ALBUMS = "albums",
+  TRACKS = "tracks",
+  HOME = "home",
+}

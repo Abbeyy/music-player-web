@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from "../../../hooks";
 import { setTopic } from "../../../redux/reducers/welcomeSlice";
 import { isLoggedInSelector } from "../../../redux/selectors/auth";
-import { Topic } from "../../../types/redux/state/welcome";
+import { TOPIC } from "../../../types";
 
 import styles from "./WelcomeMenu.module.css";
 
@@ -10,24 +10,24 @@ const WelcomeMenu = () => {
 
   const isLoggedIn = useAppSelector(isLoggedInSelector);
 
-  const changeTopic = (newTopic: Topic) => {
+  const changeTopic = (newTopic: TOPIC) => {
     dispatch(setTopic(newTopic));
   };
 
   const changeToHome = () => {
-    changeTopic(Topic.HOME);
+    changeTopic(TOPIC.HOME);
   };
 
   const changeToAlbums = () => {
-    changeTopic(Topic.ALBUMS);
+    changeTopic(TOPIC.ALBUMS);
   };
 
   const changeToArtists = () => {
-    changeTopic(Topic.ARTISTS);
+    changeTopic(TOPIC.ARTISTS);
   };
 
   const changeToTracks = () => {
-    changeTopic(Topic.TRACKS);
+    changeTopic(TOPIC.TRACKS);
   };
 
   if (!isLoggedIn) {

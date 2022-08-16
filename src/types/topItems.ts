@@ -1,5 +1,5 @@
-import { Artist } from "../artist";
-import { Track } from "../track";
+import { Artist } from "./artist";
+import { Track } from "./track";
 
 export type TopTracks = {
   href: string;

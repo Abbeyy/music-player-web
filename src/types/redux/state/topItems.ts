@@ -1,4 +1,4 @@
-import { TopArtists, TopTracks } from "../topItems";
+import { TopArtists, TopTracks } from "../../topItems";
 
 export type TopItemsState = {
   tracks: TopTracks | null;

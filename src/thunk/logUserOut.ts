@@ -1,8 +1,12 @@
 import { setCurrentUser, setToken } from "../redux/reducers/authSlice";
-import { setArtistsSearch } from "../redux/reducers/searchSlice";
-import { setTopTracks } from "../redux/reducers/topItemsSlice";
+import {
+  setAlbumsSearch,
+  setArtistsSearch,
+  setTracksSearch,
+} from "../redux/reducers/searchSlice";
+import { setTopArtists, setTopTracks } from "../redux/reducers/topItemsSlice";
 import { setTopic } from "../redux/reducers/welcomeSlice";
-import { Topic } from "../types/redux/state/welcome";
+import { TOPIC } from "../types";
 import { AppThunk } from "../types/redux/store";
 
 export const logUserOut = (): AppThunk => async (dispatch) => {
@@ -10,10 +14,16 @@ export const logUserOut = (): AppThunk => async (dispatch) => {
     window.localStorage.removeItem("token");
     dispatch(setToken(null));
 
-    dispatch(setTopic(Topic.HOME));
+    dispatch(setTopic(TOPIC.HOME));
+
     dispatch(setCurrentUser(null));
+
     dispatch(setTopTracks(null));
+    dispatch(setTopArtists(null));
+
     dispatch(setArtistsSearch([]));
+    dispatch(setAlbumsSearch([]));
+    dispatch(setTracksSearch([]));
   } catch (e: any) {
     console.warn("Failed Log User Out Thunk: ", e);
   }

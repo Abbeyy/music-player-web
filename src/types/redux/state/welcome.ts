@@ -1,10 +1,5 @@
-export type WelcomeState = {
-  topic: Topic;
-};
+import { TOPIC } from "../..";
 
-export enum Topic {
-  ARTISTS = "artists",
-  ALBUMS = "albums",
-  TRACKS = "tracks",
-  HOME = "home",
-}
+export type WelcomeState = {
+  topic: TOPIC;
+};

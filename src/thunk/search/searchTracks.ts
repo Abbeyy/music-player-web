@@ -1,6 +1,7 @@
-import { queryTracks } from "../../api/tracks";
+import { querySearch } from "../../api/search";
 import { setLoading, setTracksSearch } from "../../redux/reducers/searchSlice";
 import { tokenSelector } from "../../redux/selectors/auth";
+import { SEARCH_TYPE } from "../../types";
 import { AppThunk } from "../../types/redux/store";
 
 export const searchTracks =
@@ -13,7 +14,7 @@ export const searchTracks =
       const token = tokenSelector(getState());
 
       if (token) {
-        const tracks = await queryTracks(token, searchValue);
+        const tracks = await querySearch(token, searchValue, SEARCH_TYPE.TRACK);
 
         dispatch(setTracksSearch(tracks));
       }

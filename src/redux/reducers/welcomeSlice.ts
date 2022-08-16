@@ -1,15 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Topic, WelcomeState } from "../../types/redux/state/welcome";
+import { TOPIC } from "../../types";
+import { WelcomeState } from "../../types/redux/state/welcome";
 
 export const initialState: WelcomeState = {
-  topic: Topic.HOME,
+  topic: TOPIC.HOME,
 };
 
 export const welcomeSlice = createSlice({
   name: "welcome",
   initialState,
   reducers: {
-    setTopic: (state, action: PayloadAction<Topic>) => {
+    setTopic: (state, action: PayloadAction<TOPIC>) => {
       state.topic = action.payload;
     },
   },

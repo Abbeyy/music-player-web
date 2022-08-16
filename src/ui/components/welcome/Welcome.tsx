@@ -1,6 +1,5 @@
 import { useAppSelector } from "../../../hooks";
 import { topicSelector } from "../../../redux/selectors/welcome";
-import { Topic } from "../../../types/redux/state/welcome";
 
 import WelcomeMenu from "./WelcomeMenu";
 import AlbumsExplore from "../albums/AlbumsExplore";
@@ -9,6 +8,7 @@ import TracksExplore from "../tracks/TracksExplore";
 
 import styles from "./Welcome.module.css";
 import WelcomeHome from "./WelcomeHome";
+import { TOPIC } from "../../../types";
 
 const Welcome = () => {
   const currentTopic = useAppSelector(topicSelector);
@@ -16,19 +16,19 @@ const Welcome = () => {
   let content: JSX.Element | undefined = undefined;
 
   switch (currentTopic) {
-    case Topic.ALBUMS:
+    case TOPIC.ALBUMS:
       content = <AlbumsExplore />;
       break;
 
-    case Topic.ARTISTS:
+    case TOPIC.ARTISTS:
       content = <ArtistsExplore />;
       break;
 
-    case Topic.TRACKS:
+    case TOPIC.TRACKS:
       content = <TracksExplore />;
       break;
 
-    case Topic.HOME:
+    case TOPIC.HOME:
     default:
       content = <WelcomeHome />;
       break;

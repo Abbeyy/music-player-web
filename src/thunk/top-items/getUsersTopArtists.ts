@@ -1,6 +1,7 @@
 import { queryUsersTopItems } from "../../api/topItems";
 import { setTopArtists } from "../../redux/reducers/topItemsSlice";
 import { tokenSelector } from "../../redux/selectors/auth";
+import { TOP_ITEM } from "../../types";
 import { AppThunk } from "../../types/redux/store";
 
 export const getUsersTopArtists =
@@ -9,7 +10,10 @@ export const getUsersTopArtists =
 
     try {
       if (token) {
-        const usersTopArtists = await queryUsersTopItems(token, "artists");
+        const usersTopArtists = await queryUsersTopItems(
+          token,
+          TOP_ITEM.ARTISTS
+        );
 
         if (usersTopArtists) {
           dispatch(setTopArtists(usersTopArtists));

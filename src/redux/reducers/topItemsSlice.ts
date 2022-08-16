@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { TopItemsState } from "../../types/redux/state/topItems";
-import { TopArtists, TopTracks } from "../../types/redux/topItems";
+import { TopArtists, TopTracks } from "../../types/topItems";
 
 export const initialState: TopItemsState = {
   tracks: null,
