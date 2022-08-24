@@ -1,9 +1,9 @@
-import { queryUsersTopItems } from "../../api/topItems";
-import { setTopTracks } from "../../redux/reducers/topItemsSlice";
-import { tokenSelector } from "../../redux/selectors/auth";
-import { TOP_ITEM } from "../../types";
-import { AppThunk } from "../../types/redux/store";
-import { TopTracks } from "../../types/topItems";
+import { queryUsersTopItems } from "../../../api/current-user/topItems";
+import { setTopTracks } from "../../../redux/reducers/topItemsSlice";
+import { tokenSelector } from "../../../redux/selectors/auth";
+import { TOP_ITEM } from "../../../types";
+import { AppThunk } from "../../../types/redux/store";
+import { TopTracks } from "../../../types/topItems";
 
 export const getUsersTopTracks = (): AppThunk => async (dispatch, getState) => {
   const token = tokenSelector(getState());

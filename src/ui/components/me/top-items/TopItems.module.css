@@ -2,7 +2,7 @@
     color: #8BC5FF;
     font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0rem;
 }
 
 .TrackPanel {
@@ -25,4 +25,12 @@
 
 .ShowHide:hover {
     background-color: #9dccfc;
+}
+
+.Info {
+    color: #9dccfc;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-style: italic;
 }

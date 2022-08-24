@@ -8,7 +8,7 @@ export type ExternalURL = { spotify: string };
 
 export type Followers = {
   href: string;
-  total: number;
+  total: number | null;
 };
 
 export type Image = {

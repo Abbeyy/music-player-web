@@ -17,12 +17,10 @@
     background-color: #8BC5FF;
     color: white;
     font-weight: 700;
-    padding: 1.5rem;
-    padding-bottom: 2rem;
+    padding: 1rem;
     margin: 1rem;
     border-radius: 0.75rem;
-    min-width: 8rem;
-    max-width: 15rem;
+    width: 12rem;
 }
 
 .Row {

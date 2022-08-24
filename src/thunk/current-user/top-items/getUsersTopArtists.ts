@@ -1,8 +1,8 @@
-import { queryUsersTopItems } from "../../api/topItems";
-import { setTopArtists } from "../../redux/reducers/topItemsSlice";
-import { tokenSelector } from "../../redux/selectors/auth";
-import { TOP_ITEM } from "../../types";
-import { AppThunk } from "../../types/redux/store";
+import { queryUsersTopItems } from "../../../api/current-user/topItems";
+import { setTopArtists } from "../../../redux/reducers/topItemsSlice";
+import { tokenSelector } from "../../../redux/selectors/auth";
+import { TOP_ITEM } from "../../../types";
+import { AppThunk } from "../../../types/redux/store";
 
 export const getUsersTopArtists =
   (): AppThunk => async (dispatch, getState) => {

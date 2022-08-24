@@ -1,4 +1,4 @@
-import { queryCurrentUser } from "../api/currentUser";
+import { queryCurrentUser } from "../api/current-user/currentUser";
 import { setCurrentUser } from "../redux/reducers/authSlice";
 import { AppThunk } from "../types/redux/store";
 
