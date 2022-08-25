@@ -15,7 +15,7 @@ const AlbumsExplore = () => {
   ));
 
   return (
-    <>
+    <div className={styles["ContentWrapper"]}>
       <div className={styles["Panel"]}>
         <div className={styles["Row"]}>
           <div className={styles["PanelElement"]}>Explore Albums</div>
@@ -26,7 +26,7 @@ const AlbumsExplore = () => {
       {albums.length ? (
         <div className={styles["AlbumResults"]}>{artistPreviews}</div>
       ) : null}
-    </>
+    </div>
   );
 };
 

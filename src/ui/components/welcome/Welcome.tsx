@@ -38,7 +38,7 @@ const Welcome = () => {
     <div className={styles["WelcomeWrapper"]}>
       <div className={styles["Welcome"]}>
         <WelcomeMenu />
-        <div className={styles["ContentWrapper"]}>{content}</div>
+        {content}
       </div>
     </div>
   );

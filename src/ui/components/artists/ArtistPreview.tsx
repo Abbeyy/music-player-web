@@ -1,3 +1,5 @@
+import { useAppDispatch } from "../../../hooks";
+import { getArtistById } from "../../../thunk/artists/getArtist";
 import { Artist } from "../../../types/artist";
 
 import styles from "./Artists.module.css";
@@ -10,14 +12,20 @@ const size = 180;
 
 export const ArtistPreview = (props: Props) => {
   const { artist } = props;
-  const { name, popularity, genres, followers, images } = artist;
+  const { id, name, popularity, genres, followers, images } = artist;
+
+  const dispatch = useAppDispatch();
 
   const pp = images[0];
 
   const genresFormatted = genres.join(", ");
 
+  const getArtist = () => {
+    dispatch(getArtistById(id));
+  };
+
   return (
-    <div className={styles["ArtistPreview"]}>
+    <div className={styles["ArtistPreview"]} onClick={getArtist}>
       <img
         src={pp.url}
         style={{

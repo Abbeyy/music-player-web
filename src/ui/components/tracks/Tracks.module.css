@@ -84,3 +84,10 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
+
+.ContentWrapper {
+    border-top: 0.03rem solid #e66465;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-top: 1rem;
+}

@@ -14,7 +14,7 @@ const TracksExplore = () => {
   ));
 
   return (
-    <>
+    <div className={styles["ContentWrapper"]}>
       <div className={styles["Panel"]}>
         <div className={styles["Row"]}>
           <div className={styles["PanelElement"]}>Tracks Explore</div>
@@ -25,7 +25,7 @@ const TracksExplore = () => {
       {tracks.length ? (
         <div className={styles["TrackResults"]}>{trackPreviews}</div>
       ) : null}
-    </>
+    </div>
   );
 };
 
