@@ -22,3 +22,17 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.ShowHide {
+    background-color: #8BC5FF;
+    font-weight: 700;
+    color: white;
+    padding: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    text-transform: capitalize;
+}
+
+.ShowHide:hover {
+    background-color: #9dccfc;
+}
