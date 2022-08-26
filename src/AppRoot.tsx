@@ -10,7 +10,7 @@ import Welcome from "./ui/components/welcome/Welcome";
 import Me from "./ui/components/me/Me";
 import { useAppSelector } from "./hooks";
 import { isLoggedInSelector } from "./redux/selectors/auth";
-import { ArtistProfile } from "./ui/components/artists/ArtistProfile";
+import { ArtistProfile } from "./ui/components/artists/profile/ArtistProfile";
 
 const AppRoot = () => {
   const isLoggedIn = useAppSelector(isLoggedInSelector);

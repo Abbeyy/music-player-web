@@ -1,13 +1,32 @@
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { artistSelector } from "../../../redux/selectors/artist";
-import { ErrorHandler } from "../error/errorHandler";
+import {
+  artistAlbumsSelector,
+  artistSelector,
+} from "../../../../redux/selectors/artist";
+import { Album } from "../../../../types/album";
+import { ErrorHandler } from "../../error/errorHandler";
+import { ArtistsAlbums } from "./ArtistAlbums";
 import styles from "./ArtistProfile.module.css";
 
 const size = 250;
 
 export const ArtistProfile = () => {
   const artist = useSelector(artistSelector);
+  const albums = useSelector(artistAlbumsSelector);
+
+  const albumsSorted = albums?.reduce(
+    (acc: { [key: string]: Album[] }, album: Album) => {
+      const { album_type } = album;
+      if (Object.keys(acc).includes(album_type)) {
+        acc[album_type].push(album);
+      } else {
+        acc[album_type] = [album];
+      }
+      return acc;
+    },
+    {}
+  );
 
   const navigate = useNavigate();
 
@@ -71,9 +90,9 @@ export const ArtistProfile = () => {
           <p>Popular (...tracks)</p>
         </div>
 
-        <div>
-          <p>Under construction!</p>
-        </div>
+        {albums?.length && albumsSorted ? (
+          <ArtistsAlbums albums={albumsSorted} />
+        ) : null}
       </div>
     </div>
   );
