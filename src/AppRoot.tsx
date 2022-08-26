@@ -10,6 +10,7 @@ import Welcome from "./ui/components/welcome/Welcome";
 import Me from "./ui/components/me/Me";
 import { useAppSelector } from "./hooks";
 import { isLoggedInSelector } from "./redux/selectors/auth";
+import { ArtistProfile } from "./ui/components/artists/ArtistProfile";
 
 const AppRoot = () => {
   const isLoggedIn = useAppSelector(isLoggedInSelector);
@@ -22,6 +23,7 @@ const AppRoot = () => {
         <Switch>
           <Route path="/" element={<Welcome />} />
           <Route path="/me" element={isLoggedIn ? <Me /> : <Welcome />} />
+          <Route path="/artist" element={<ArtistProfile />} />
         </Switch>
       </div>
     </Router>

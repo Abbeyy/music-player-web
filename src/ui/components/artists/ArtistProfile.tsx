@@ -1,27 +1,35 @@
-import { Artist } from "../../../types/artist";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { artistSelector } from "../../../redux/selectors/artist";
+import { ErrorHandler } from "../error/errorHandler";
 import styles from "./ArtistProfile.module.css";
-
-type Props = {
-  artist: Artist;
-  back: () => void;
-};
 
 const size = 250;
 
-export const ArtistProfile = (props: Props) => {
-  const { artist, back } = props;
+export const ArtistProfile = () => {
+  const artist = useSelector(artistSelector);
+
+  const navigate = useNavigate();
+
+  if (!artist) {
+    console.log("There was an error getting the artist...");
+    return <ErrorHandler />;
+  }
+
   const { images, name, followers, genres, popularity, type } = artist;
 
   const pp = images[0];
 
   const genresFormatted = genres.join(", ");
 
+  const goBack = () => navigate(-1);
+
   return (
     <div className={styles["ArtistWrapper"]}>
-      <div className={styles["Back"]} onClick={back}>
-        <p className={styles["BackText"]}>Back</p>
-      </div>
       <div className={styles["Artist"]}>
+        <div className={styles["Back"]} onClick={goBack}>
+          <p className={styles["BackText"]}>Back</p>
+        </div>
         <div className={styles["Panel"]}>
           <img
             src={pp?.url}

@@ -1,10 +1,11 @@
+import { NavigateFunction } from "react-router-dom";
 import { queryArtistById } from "../../api/artist/artistById";
 import { setArtist } from "../../redux/reducers/artistSlice";
 import { tokenSelector } from "../../redux/selectors/auth";
 import { AppThunk } from "../../types/redux/store";
 
 export const getArtistById =
-  (id: string): AppThunk =>
+  (id: string, navigateTo: NavigateFunction): AppThunk =>
   async (dispatch, getState) => {
     const token = tokenSelector(getState());
 
@@ -14,6 +15,7 @@ export const getArtistById =
 
         if (artist) {
           dispatch(setArtist(artist));
+          navigateTo("/artist");
         } else {
           console.warn("Failed Get Artist By Id Thunk");
         }

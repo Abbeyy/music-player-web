@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../../hooks";
 import { getArtistById } from "../../../thunk/artists/getArtist";
 import { Artist } from "../../../types/artist";
@@ -15,13 +16,14 @@ export const ArtistPreview = (props: Props) => {
   const { id, name, popularity, genres, followers, images } = artist;
 
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const pp = images[0];
 
   const genresFormatted = genres.join(", ");
 
   const getArtist = () => {
-    dispatch(getArtistById(id));
+    dispatch(getArtistById(id, navigate));
   };
 
   return (
