@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./NavigationMenu.module.css";
+import LogOut from "../authentication/LogOut";
 
 const NavigationBar = () => {
   return (
@@ -10,6 +11,7 @@ const NavigationBar = () => {
       <Link className={styles["Option"]} to="/me">
         Me
       </Link>
+      <LogOut />
     </div>
   );
 };

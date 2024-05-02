@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { setCurrentUser, setToken } from "../redux/reducers/authSlice";
 import {
   setAlbumsSearch,
@@ -10,6 +11,8 @@ import { TOPIC } from "../types";
 import { AppThunk } from "../types/redux/store";
 
 export const logUserOut = (): AppThunk => async (dispatch) => {
+  const navigate = useNavigate();
+
   try {
     window.localStorage.removeItem("token");
     dispatch(setToken(null));
@@ -24,6 +27,8 @@ export const logUserOut = (): AppThunk => async (dispatch) => {
     dispatch(setArtistsSearch([]));
     dispatch(setAlbumsSearch([]));
     dispatch(setTracksSearch([]));
+
+    navigate("/login");
   } catch (e: any) {
     console.warn("Failed Log User Out Thunk: ", e);
   }
