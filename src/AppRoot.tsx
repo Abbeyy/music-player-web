@@ -1,29 +1,30 @@
-import "./App.css";
+// import "./App.css";
 import {
   BrowserRouter as Router,
   Routes as Switch,
   Route,
 } from "react-router-dom";
-import NavigationMenu from "./ui/components/navigation/NavigationMenu";
 import styles from "./AppRoot.module.css";
 import Welcome from "./ui/components/welcome/Welcome";
 import Me from "./ui/components/me/Me";
-import { useAppSelector } from "./hooks";
-import { isLoggedInSelector } from "./redux/selectors/auth";
 import { ArtistProfile } from "./ui/components/artists/profile/ArtistProfile";
+import { Login } from "./ui/components/authentication/LoginNew";
+import { BaseLayout } from "./ui/layouts/baseLayout";
 
 const AppRoot = () => {
-  const isLoggedIn = useAppSelector(isLoggedInSelector);
-
   return (
     <Router>
       <div className={styles["AppRoot"]}>
-        <NavigationMenu />
-
         <Switch>
-          <Route path="/" element={<Welcome />} />
-          <Route path="/me" element={isLoggedIn ? <Me /> : <Welcome />} />
-          <Route path="/artist" element={<ArtistProfile />} />
+          <Route path="/login" element={<Login />} />
+
+          <Route path="/" element={<BaseLayout />}>
+            <Route path="/welcome" element={<Welcome />} />
+            <Route path="/me" element={<Me />} />
+            <Route path="/artist" element={<ArtistProfile />} />
+          </Route>
+
+          <Route path="*" element={<Login />} />
         </Switch>
       </div>
     </Router>

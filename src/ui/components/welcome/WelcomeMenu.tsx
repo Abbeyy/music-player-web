@@ -10,29 +10,17 @@ const WelcomeMenu = () => {
 
   const isLoggedIn = useAppSelector(isLoggedInSelector);
 
-  const changeTopic = (newTopic: TOPIC) => {
-    dispatch(setTopic(newTopic));
-  };
+  if (!isLoggedIn) return null;
 
-  const changeToHome = () => {
-    changeTopic(TOPIC.HOME);
-  };
+  const changeTopic = (newTopic: TOPIC) => dispatch(setTopic(newTopic));
 
-  const changeToAlbums = () => {
-    changeTopic(TOPIC.ALBUMS);
-  };
+  const changeToHome = () => changeTopic(TOPIC.HOME);
 
-  const changeToArtists = () => {
-    changeTopic(TOPIC.ARTISTS);
-  };
+  const changeToAlbums = () => changeTopic(TOPIC.ALBUMS);
 
-  const changeToTracks = () => {
-    changeTopic(TOPIC.TRACKS);
-  };
+  const changeToArtists = () => changeTopic(TOPIC.ARTISTS);
 
-  if (!isLoggedIn) {
-    return null;
-  }
+  const changeToTracks = () => changeTopic(TOPIC.TRACKS);
 
   return (
     <ul className={styles["menu"]}>

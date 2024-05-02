@@ -1,104 +1,101 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-
 .Back {
-    align-self: flex-end;
-    margin-right: 2rem;
-    margin-top: 1rem;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    font-weight: bold;
-    font-size: 16px;
-    letter-spacing: 0rem;
-    background-color: #e66465;
-    color: white;
-    border-radius: 5px;
+  align-self: flex-end;
+  margin-right: 2rem;
+  margin-top: 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0rem;
+  background-color: #e66465;
+  color: white;
+  border-radius: 5px;
 }
 
 .ArtistWrapper {
-    display: flex;
-    flex: 3;
-    flex-direction: column;
-    background-color: #e66465;
+  display: flex;
+  flex: 3;
+  flex-direction: column;
+  background-color: #e66465;
 }
 
 .Artist {
-    margin: 1rem;
-    display: flex;
-    flex: 3;
-    flex-direction: column;
-    background-color: white;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+  margin: 1rem;
+  display: flex;
+  flex: 3;
+  flex-direction: column;
+  background-color: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .Panel {
-    display: flex;
-    padding-top: 1rem;
-    margin-right: 3rem;
-    margin-left: 3rem;
-    border-bottom: 0.03rem solid #e66465;
+  display: flex;
+  padding-top: 1rem;
+  margin-right: 3rem;
+  margin-left: 3rem;
+  border-bottom: 0.03rem solid #e66465;
 }
 
 .Info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
-    padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-bottom: 2rem;
 }
 
 .DetailCapitalize {
-    color: #e66465;
-    font-size: 14px;
-    letter-spacing: 0rem;
-    margin: 0;
-    font-weight: 500;
-    text-transform: capitalize;
+  color: #e66465;
+  font-size: 14px;
+  letter-spacing: 0rem;
+  margin: 0;
+  font-weight: 500;
+  text-transform: capitalize;
 }
 
 .Detail {
-    color: #e66465;
-    font-size: 14px;
-    letter-spacing: 0rem;
-    margin: 0;
-    font-weight: 500;
+  color: #e66465;
+  font-size: 14px;
+  letter-spacing: 0rem;
+  margin: 0;
+  font-weight: 500;
 }
 
 .DetailWrapped {
-    color: #e66465;
-    font-size: 14px;
-    letter-spacing: 0rem;
-    margin: 0;
-    font-weight: 500;
-    flex-wrap: wrap;
+  color: #e66465;
+  font-size: 14px;
+  letter-spacing: 0rem;
+  margin: 0;
+  font-weight: 500;
+  flex-wrap: wrap;
 
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .Name {
-    color: #e66465;
-    font-family: 'Permanent Marker', cursive;
-    font-size: 5rem;
-    align-self: center;
-    font-weight: 700;
-    padding: 0rem;
-    margin: 0rem;
+  color: #e66465;
+  font-size: 5rem;
+  align-self: center;
+  font-weight: 700;
+  padding: 0rem;
+  margin: 0rem;
 }
 
 .Section {
-    margin-left: 2rem;
-    margin-right: 2rem;
-    border-radius: 20px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  border-radius: 20px;
 }
 
 .Title {
-    color: #e66465;
-    font-size: 1.5rem;
-    font-weight: 700;
+  color: #e66465;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 .Section > * {
-    color: #e66465;
+  color: #e66465;
 }
