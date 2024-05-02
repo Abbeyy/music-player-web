@@ -3,13 +3,14 @@ import {
   BrowserRouter as Router,
   Routes as Switch,
   Route,
+  Navigate,
 } from "react-router-dom";
 import styles from "./AppRoot.module.css";
-import Welcome from "./ui/components/welcome/Welcome";
 import Me from "./ui/components/me/Me";
 import { ArtistProfile } from "./ui/components/artists/profile/ArtistProfile";
 import { Login } from "./ui/components/authentication/LoginNew";
 import { BaseLayout } from "./ui/layouts/baseLayout";
+import Discover from "./ui/components/discover/Discover";
 
 const AppRoot = () => {
   return (
@@ -19,12 +20,12 @@ const AppRoot = () => {
           <Route path="/login" element={<Login />} />
 
           <Route path="/" element={<BaseLayout />}>
-            <Route path="/welcome" element={<Welcome />} />
+            <Route path="/discover" element={<Discover />} />
             <Route path="/me" element={<Me />} />
             <Route path="/artist" element={<ArtistProfile />} />
           </Route>
 
-          <Route path="*" element={<Login />} />
+          {/* <Route path="*" element={<Navigate to={{ pathname: "/login" }} />} /> */}
         </Switch>
       </div>
     </Router>

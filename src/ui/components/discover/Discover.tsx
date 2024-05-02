@@ -1,16 +1,16 @@
 import { useAppSelector } from "../../../hooks";
-import { topicSelector } from "../../../redux/selectors/welcome";
 
-import WelcomeMenu from "./WelcomeMenu";
+import DiscoverMenu from "./DiscoverMenu";
 import AlbumsExplore from "../albums/AlbumsExplore";
 import ArtistsExplore from "../artists/ArtistsExplore";
 import TracksExplore from "../tracks/TracksExplore";
 
-import styles from "./Welcome.module.css";
-import WelcomeHome from "./WelcomeHome";
+import styles from "./Discover.module.css";
+import DiscoverHome from "./DiscoverHome";
 import { TOPIC } from "../../../types";
+import { topicSelector } from "../../../redux/selectors/discover";
 
-const Welcome = () => {
+const Discover = () => {
   const currentTopic = useAppSelector(topicSelector);
 
   let content: JSX.Element | undefined = undefined;
@@ -30,18 +30,18 @@ const Welcome = () => {
 
     case TOPIC.HOME:
     default:
-      content = <WelcomeHome />;
+      content = <DiscoverHome />;
       break;
   }
 
   return (
-    <div className={styles["WelcomeWrapper"]}>
-      <div className={styles["Welcome"]}>
-        <WelcomeMenu />
+    <div className={styles["DiscoverWrapper"]}>
+      <div className={styles["Discover"]}>
+        <DiscoverMenu />
         {content}
       </div>
     </div>
   );
 };
 
-export default Welcome;
+export default Discover;

@@ -3,8 +3,8 @@ import { isLoggedInSelector } from "../../../redux/selectors/auth";
 
 import styles from "./Albums.module.css";
 import { AlbumPreview } from "./AlbumPreview";
-import ExploreSearch from "../welcome/ExploreSearch";
 import { albumsSelector } from "../../../redux/selectors/search";
+import ExploreSearch from "../discover/ExploreSearch";
 
 const AlbumsExplore = () => {
   const isLoggedIn = useAppSelector(isLoggedInSelector);

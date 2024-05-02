@@ -1,5 +1,5 @@
 import { TOPIC } from "../..";
 
-export type WelcomeState = {
+export type DiscoverState = {
   topic: TOPIC;
 };

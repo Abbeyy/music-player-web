@@ -1,11 +1,11 @@
 import { useAppDispatch, useAppSelector } from "../../../hooks";
-import { setTopic } from "../../../redux/reducers/welcomeSlice";
+import { setTopic } from "../../../redux/reducers/discoverSlice";
 import { isLoggedInSelector } from "../../../redux/selectors/auth";
 import { TOPIC } from "../../../types";
 
-import styles from "./WelcomeMenu.module.css";
+import styles from "./DiscoverMenu.module.css";
 
-const WelcomeMenu = () => {
+const DiscoverMenu = () => {
   const dispatch = useAppDispatch();
 
   const isLoggedIn = useAppSelector(isLoggedInSelector);
@@ -40,4 +40,4 @@ const WelcomeMenu = () => {
   );
 };
 
-export default WelcomeMenu;
+export default DiscoverMenu;

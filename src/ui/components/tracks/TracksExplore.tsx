@@ -1,7 +1,7 @@
 import { useAppSelector } from "../../../hooks";
 import { isLoggedInSelector } from "../../../redux/selectors/auth";
 import { tracksSelector } from "../../../redux/selectors/search";
-import ExploreSearch from "../welcome/ExploreSearch";
+import ExploreSearch from "../discover/ExploreSearch";
 import TrackPreview from "./TrackPreview";
 import styles from "./Tracks.module.css";
 

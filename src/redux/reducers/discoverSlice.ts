@@ -1,13 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { TOPIC } from "../../types";
-import { WelcomeState } from "../../types/redux/state/welcome";
+import { DiscoverState } from "../../types/redux/state/discover";
 
-export const initialState: WelcomeState = {
+export const initialState: DiscoverState = {
   topic: TOPIC.HOME,
 };
 
-export const welcomeSlice = createSlice({
-  name: "welcome",
+export const DiscoverSlice = createSlice({
+  name: "discover",
   initialState,
   reducers: {
     setTopic: (state, action: PayloadAction<TOPIC>) => {
@@ -16,6 +16,6 @@ export const welcomeSlice = createSlice({
   },
 });
 
-export const { setTopic } = welcomeSlice.actions;
+export const { setTopic } = DiscoverSlice.actions;
 
-export default welcomeSlice.reducer;
+export default DiscoverSlice.reducer;

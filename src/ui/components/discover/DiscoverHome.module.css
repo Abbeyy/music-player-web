@@ -1,11 +1,11 @@
-.WelcomeHome {
+.discoverHome {
   display: flex;
   flex-direction: column;
   text-align: center;
   max-width: none;
 }
 
-.WelcomeTitle {
+.discoverTitle {
   align-self: center;
   color: #8bc5ff;
   font-size: 4rem;
