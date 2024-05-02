@@ -17,15 +17,20 @@ const AppRoot = () => {
     <Router>
       <div className={styles["AppRoot"]}>
         <Switch>
-          <Route path="/login" element={<Login />} />
-
           <Route path="/" element={<BaseLayout />}>
             <Route path="/discover" element={<Discover />} />
             <Route path="/me" element={<Me />} />
             <Route path="/artist" element={<ArtistProfile />} />
+
+            <Route
+              path="*"
+              element={<Navigate to={{ pathname: "/discover" }} />}
+            />
           </Route>
 
-          {/* <Route path="*" element={<Navigate to={{ pathname: "/login" }} />} /> */}
+          <Route path="/login" element={<Login />} />
+
+          <Route path="*" element={<BaseLayout />} />
         </Switch>
       </div>
     </Router>
