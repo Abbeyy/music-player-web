@@ -13,9 +13,9 @@ export const BaseLayout = () => {
     <Navigate to="/discover" />;
 
   return (
-    <>
+    <div className="flex flex-row w-[100vw] h-[100vh]">
       <NavigationMenu />
       <Outlet />
-    </>
+    </div>
   );
 };

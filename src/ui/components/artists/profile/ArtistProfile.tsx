@@ -44,56 +44,65 @@ export const ArtistProfile = () => {
   const goBack = () => navigate(-1);
 
   return (
-    <div className={styles["ArtistWrapper"]}>
-      <div className={styles["Artist"]}>
-        <div className={styles["Back"]} onClick={goBack}>
-          <p className={styles["BackText"]}>Back</p>
-        </div>
-        <div className={styles["Panel"]}>
-          <img
-            src={pp?.url}
-            style={{
-              width: size,
-              height: size,
-              objectFit: "cover",
-              objectPosition: "100% 0%",
-              aspectRatio: "auto",
-              borderRadius: 150,
-              margin: 30,
-              marginLeft: 0,
-            }}
-            alt="Artist"
-          />
-          <div className={styles["Info"]}>
-            <p className={styles["DetailCapitalize"]}>{type}</p>
-            <p className={styles["Name"]}>{name}</p>
-            {followers ? (
-              <p
-                className={styles["Detail"]}
-              >{`${followers.total} Followers`}</p>
-            ) : null}
-            <p className={styles["Detail"]}>{popularity} ♥</p>
-            <p>
-              className={styles["Detail-Wrapped"]}
-              {genresFormatted}
-            </p>
-          </div>
-        </div>
-
-        <div className={styles["Section"]}>
-          <p>Play</p>
-          <p>Follow Btn</p>
-          <p>...</p>
-        </div>
-
-        <div className={styles["Section"]}>
-          <p>Popular (...tracks)</p>
-        </div>
-
-        {albums?.length && albumsSorted ? (
-          <ArtistsAlbums albums={albumsSorted} />
-        ) : null}
-      </div>
+    <div className="flex w-full h-full items-center justify-center flex-col gap-y-4">
+      <p className="text-center font-medium text-2xl">
+        This is a building site 👷
+      </p>
+      <p className="text-center text-lg">Come back soon 🚧</p>
     </div>
   );
+
+  // return (
+  //   <div className={styles["ArtistWrapper"]}>
+  //     <div className={styles["Artist"]}>
+  //       <div className={styles["Back"]} onClick={goBack}>
+  //         <p className={styles["BackText"]}>Back</p>
+  //       </div>
+  //       <div className={styles["Panel"]}>
+  //         <img
+  //           src={pp?.url}
+  //           style={{
+  //             width: size,
+  //             height: size,
+  //             objectFit: "cover",
+  //             objectPosition: "100% 0%",
+  //             aspectRatio: "auto",
+  //             borderRadius: 150,
+  //             margin: 30,
+  //             marginLeft: 0,
+  //           }}
+  //           alt="Artist"
+  //         />
+  //         <div className={styles["Info"]}>
+  //           <p className={styles["DetailCapitalize"]}>{type}</p>
+  //           <p className={styles["Name"]}>{name}</p>
+  //           {followers ? (
+  //             <p
+  //               className={styles["Detail"]}
+  //             >{`${followers.total} Followers`}</p>
+  //           ) : null}
+  //           <p className={styles["Detail"]}>{popularity} ♥</p>
+  //           <p>
+  //             className={styles["Detail-Wrapped"]}
+  //             {genresFormatted}
+  //           </p>
+  //         </div>
+  //       </div>
+
+  //       <div className={styles["Section"]}>
+  //         <p>Play</p>
+  //         <p>Follow Btn</p>
+  //         <p>...</p>
+  //       </div>
+
+  //       <div className={styles["Section"]}>
+  //         <p>Popular (...tracks)</p>
+  //       </div>
+
+  //       {albums?.length && albumsSorted ? (
+  //         <ArtistsAlbums albums={albumsSorted} />
+  //       ) : null}
+  //     </div>
+  //   </div>
+  // );
 };

@@ -35,13 +35,22 @@ const Discover = () => {
   }
 
   return (
-    <div className={styles["DiscoverWrapper"]}>
-      <div className={styles["Discover"]}>
-        <DiscoverMenu />
-        {content}
-      </div>
+    <div className="flex w-full h-full items-center justify-center flex-col gap-y-4">
+      <p className="text-center font-medium text-2xl">
+        This is a building site 👷
+      </p>
+      <p className="text-center text-lg">Come back soon 🚧</p>
     </div>
   );
+
+  // return (
+  //   <div className={styles["DiscoverWrapper"]}>
+  //     <div className={styles["Discover"]}>
+  //       <DiscoverMenu />
+  //       {content}
+  //     </div>
+  //   </div>
+  // );
 };
 
 export default Discover;

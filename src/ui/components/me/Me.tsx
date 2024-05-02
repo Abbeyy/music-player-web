@@ -12,43 +12,52 @@ const Me = () => {
   const pp = user?.images[0];
 
   return (
-    <div className={styles["MeWrapper"]}>
-      <div className={styles["Me"]}>
-        <div className={styles["Panel"]}>
-          <img
-            src={pp?.url}
-            style={{
-              width: size,
-              height: size,
-              objectFit: "cover",
-              objectPosition: "100% 0%",
-              aspectRatio: "auto",
-              borderRadius: 150,
-              margin: 30,
-              marginLeft: 0,
-            }}
-            alt="Artist"
-          />
-          <div className={styles["Info"]}>
-            <p className={styles["Detail"]}>PROFILE</p>
-            <p className={styles["Name"]}>{user?.display_name}</p>
-            {user?.followers ? (
-              <p
-                className={styles["Detail"]}
-              >{`${user?.followers.total} Followers`}</p>
-            ) : null}
-            <p className={styles["Detail"]}>{user?.country}</p>
-          </div>
-        </div>
-
-        <div className={styles["Music"]}>
-          <TopTracks />
-          <TopArtists />
-          <CurrentUsersPlaylists />
-        </div>
-      </div>
+    <div className="flex w-full h-full items-center justify-center flex-col gap-y-4">
+      <p className="text-center font-medium text-2xl">
+        This is a building site 👷
+      </p>
+      <p className="text-center text-lg">Come back soon 🚧</p>
     </div>
   );
+
+  // return (
+  //   <div className={styles["MeWrapper"]}>
+  //     <div className={styles["Me"]}>
+  //       <div className={styles["Panel"]}>
+  //         <img
+  //           src={pp?.url}
+  //           style={{
+  //             width: size,
+  //             height: size,
+  //             objectFit: "cover",
+  //             objectPosition: "100% 0%",
+  //             aspectRatio: "auto",
+  //             borderRadius: 150,
+  //             margin: 30,
+  //             marginLeft: 0,
+  //           }}
+  //           alt="Artist"
+  //         />
+  //         <div className={styles["Info"]}>
+  //           <p className={styles["Detail"]}>PROFILE</p>
+  //           <p className={styles["Name"]}>{user?.display_name}</p>
+  //           {user?.followers ? (
+  //             <p
+  //               className={styles["Detail"]}
+  //             >{`${user?.followers.total} Followers`}</p>
+  //           ) : null}
+  //           <p className={styles["Detail"]}>{user?.country}</p>
+  //         </div>
+  //       </div>
+
+  //       <div className={styles["Music"]}>
+  //         <TopTracks />
+  //         <TopArtists />
+  //         <CurrentUsersPlaylists />
+  //       </div>
+  //     </div>
+  //   </div>
+  // );
 };
 
 export default Me;
