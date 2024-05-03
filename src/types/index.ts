@@ -33,4 +33,5 @@ export enum TOPIC {
   ALBUMS = "albums",
   TRACKS = "tracks",
   HOME = "home",
+  PLAYLISTS = "playlists",
 }

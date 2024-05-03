@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-import { setupForLoggingIn } from "../../../thunk/setupForLoggingIn";
 import { takeUserToExternalAuthentication } from "../../../thunk/logUserIn";
 import { useAppDispatch } from "../../../hooks";
 import { motion } from "framer-motion";
@@ -8,10 +6,6 @@ type Props = {};
 
 export const Login = (props: Props) => {
   const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    dispatch(setupForLoggingIn());
-  }, []);
 
   const handleLogin = () => dispatch(takeUserToExternalAuthentication());
 

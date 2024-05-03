@@ -24,10 +24,14 @@ const NavigationBar = () => {
   if (location.pathname === "/discover") active = ActiveItem.discover;
   else if (location.pathname === "/me") active = ActiveItem.Me;
 
+  const activeStyle = "bg-[#593c57] border-[2px] border-[#9E829C]";
+  const hoverStyle =
+    "hover:bg-[#593c57] hover:border-[2px] hover:border-[#9E829C]";
+
   return (
-    <div className="flex flex-col items-center justify-evenly gap-[4rem] py-[4rem] bg-[#4E2C4D] w-[250px] h-[100vh]">
+    <div className="flex flex-col border-r-[0.5px] border-[#b5a8b4] items-center justify-between py-[4rem] bg-[#291d28] min-w-[150px] h-[100vh]">
       <button
-        className="flex h-[70px] w-[70px] rounded-full justify-center items-center hover:bg-[#9E829C] hover:border-[2px] hover:border-[#C6A3C3]"
+        className={`flex h-[70px] w-[70px] rounded-full justify-center items-center ${hoverStyle}`}
         onClick={logout}
       >
         <IoLogOut
@@ -36,34 +40,30 @@ const NavigationBar = () => {
         />
       </button>
 
-      <hr />
-
-      <Link
-        className={`flex h-[70px] w-[70px] rounded-full justify-center items-center ${
-          active === ActiveItem.discover
-            ? "bg-[#9E829C] border-[2px] border-[#C6A3C3]"
-            : "hover:bg-[#9E829C] hover:border-[2px] hover:border-[#C6A3C3]"
-        }`}
-        to="/discover"
-      >
-        <IoHome
-          size={24}
-          color={active === ActiveItem.discover ? "white" : "#F0EFF4"}
-        />
-      </Link>
-      <Link
-        className={`flex h-[70px] w-[70px] rounded-full justify-center items-center ${
-          active === ActiveItem.Me
-            ? "bg-[#9E829C] border-[2px] border-[#C6A3C3]"
-            : "hover:bg-[#9E829C] hover:border-[2px] hover:border-[#C6A3C3]"
-        }`}
-        to="/me"
-      >
-        <RxAvatar
-          size={24}
-          color={active === ActiveItem.discover ? "white" : "#F0EFF4"}
-        />
-      </Link>
+      <div className="flex flex-col gap-[4rem] justify-evenly items-center">
+        <Link
+          className={`flex h-[70px] w-[70px] rounded-full justify-center items-center ${
+            active === ActiveItem.discover ? activeStyle : hoverStyle
+          }`}
+          to={{ pathname: "discover", hash: location.hash }}
+        >
+          <IoHome
+            size={24}
+            color={active === ActiveItem.discover ? "white" : "#F0EFF4"}
+          />
+        </Link>
+        <Link
+          className={`flex h-[70px] w-[70px] rounded-full justify-center items-center ${
+            active === ActiveItem.Me ? activeStyle : hoverStyle
+          }`}
+          to={{ pathname: "me", hash: location.hash }}
+        >
+          <RxAvatar
+            size={24}
+            color={active === ActiveItem.discover ? "white" : "#F0EFF4"}
+          />
+        </Link>
+      </div>
     </div>
   );
 };

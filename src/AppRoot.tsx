@@ -18,9 +18,9 @@ const AppRoot = () => {
       <div className={styles["AppRoot"]}>
         <Switch>
           <Route path="/" element={<BaseLayout />}>
-            <Route path="/discover" element={<Discover />} />
-            <Route path="/me" element={<Me />} />
-            <Route path="/artist" element={<ArtistProfile />} />
+            <Route path="discover" element={<Discover />} />
+            <Route path="me" element={<Me />} />
+            <Route path="artist" element={<ArtistProfile />} />
 
             <Route
               path="*"
@@ -29,7 +29,6 @@ const AppRoot = () => {
           </Route>
 
           <Route path="/login" element={<Login />} />
-
           <Route path="*" element={<BaseLayout />} />
         </Switch>
       </div>

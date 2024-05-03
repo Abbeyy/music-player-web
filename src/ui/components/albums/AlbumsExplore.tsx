@@ -1,10 +1,9 @@
 import { useAppSelector } from "../../../hooks";
 import { isLoggedInSelector } from "../../../redux/selectors/auth";
-
 import styles from "./Albums.module.css";
 import { AlbumPreview } from "./AlbumPreview";
 import { albumsSelector } from "../../../redux/selectors/search";
-import ExploreSearch from "../discover/ExploreSearch";
+import DiscoverSearch from "../discover/DiscoverSearch";
 
 const AlbumsExplore = () => {
   const isLoggedIn = useAppSelector(isLoggedInSelector);
@@ -19,7 +18,7 @@ const AlbumsExplore = () => {
       <div className={styles["Panel"]}>
         <div className={styles["Row"]}>
           <div className={styles["PanelElement"]}>Explore Albums</div>
-          {isLoggedIn ? <ExploreSearch item="albums" /> : null}
+          {isLoggedIn ? <DiscoverSearch item="albums" /> : null}
         </div>
       </div>
 

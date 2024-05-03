@@ -27,25 +27,38 @@ export const ArtistPreview = (props: Props) => {
   };
 
   return (
-    <div className={styles["ArtistPreview"]} onClick={getArtist}>
+    <button
+      onClick={getArtist}
+      className="flex flex-col color-white font-bold p-4 m-4 rounded-[8px] w-[12rem] gap-y-4"
+    >
       <img
         src={pp.url}
         style={{
           width: size,
           height: size,
+          maxHeight: size,
+          maxWidth: size,
           objectFit: "cover",
           objectPosition: "100% 0%",
           aspectRatio: "auto",
-          borderRadius: 100,
+          borderRadius: 16,
         }}
         alt="Artist"
       />
-      <div className={styles["ArtistNameWrapper"]}>
-        <p className={styles["ArtistName"]}>{name}</p>
+      <div className="flex flex-col justify-center items-start">
+        <p className="block uppercase text-white text-xl mb-2 mt-0 truncate max-w-[11.5rem]">
+          {name}
+        </p>
+        {/* <p className="block text-md font-medium m-[0.1rem] flex-wrap text-white truncate max-w-[11.5rem]">
+          {`${popularity} popularity score`}
+        </p>
+        <p className="block text-lg font-bold m-[0.1rem] flex-wrap text-white truncate max-w-[11.5rem]">
+          {`${followers.total} followers`}
+        </p> */}
+        <p className="block text-lg font-medium m-[0.1rem] flex-wrap text-white truncate max-w-[11.5rem]">
+          {genresFormatted}
+        </p>
       </div>
-      <p className={styles["ArtistInfo"]}>{`${popularity} popularity score`}</p>
-      <p className={styles["ArtistInfo"]}>{`${followers.total} followers`}</p>
-      <p className={styles["ArtistInfo"]}>{genresFormatted}</p>
-    </div>
+    </button>
   );
 };

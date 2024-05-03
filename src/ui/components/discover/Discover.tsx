@@ -1,56 +1,43 @@
 import { useAppSelector } from "../../../hooks";
-
-import DiscoverMenu from "./DiscoverMenu";
-import AlbumsExplore from "../albums/AlbumsExplore";
-import ArtistsExplore from "../artists/ArtistsExplore";
-import TracksExplore from "../tracks/TracksExplore";
-
-import styles from "./Discover.module.css";
-import DiscoverHome from "./DiscoverHome";
 import { TOPIC } from "../../../types";
-import { topicSelector } from "../../../redux/selectors/discover";
+import { currentUserNameSelector } from "../../../redux/selectors/auth";
+import { motion } from "framer-motion";
+
+const gradients = [
+  "linear-gradient(300deg, #9c07b3, #1466b9)",
+  "linear-gradient(193deg, #3d3372, #a81679)",
+  "linear-gradient(350deg, #26195e, #b233ab)",
+  "linear-gradient(25deg, #9c24b8, #2449d2)",
+];
 
 const Discover = () => {
-  const currentTopic = useAppSelector(topicSelector);
+  const name = useAppSelector(currentUserNameSelector);
 
-  let content: JSX.Element | undefined = undefined;
-
-  switch (currentTopic) {
-    case TOPIC.ALBUMS:
-      content = <AlbumsExplore />;
-      break;
-
-    case TOPIC.ARTISTS:
-      content = <ArtistsExplore />;
-      break;
-
-    case TOPIC.TRACKS:
-      content = <TracksExplore />;
-      break;
-
-    case TOPIC.HOME:
-    default:
-      content = <DiscoverHome />;
-      break;
-  }
+  const getCards = () =>
+    [TOPIC.ALBUMS, TOPIC.ARTISTS, TOPIC.TRACKS, TOPIC.PLAYLISTS].map(
+      (topic, idx) => (
+        <motion.button
+          className="flex w-[300px] h-[180px] rounded-[8px] bg-pink-100 justify-start items-end"
+          style={{
+            background: gradients[idx],
+          }}
+          whileHover={{ scale: 1.15 }}
+        >
+          <h2 className="text-white font-bold text-4xl p-4">{topic}</h2>
+        </motion.button>
+      )
+    );
 
   return (
-    <div className="flex w-full h-full items-center justify-center flex-col gap-y-4">
-      <p className="text-center font-medium text-2xl">
-        This is a building site 👷
-      </p>
-      <p className="text-center text-lg">Come back soon 🚧</p>
+    <div className="flex flex-col w-full h-full">
+      <div className="flex w-full h-max self-start h-max flex-col justify-center items-center gap-y-[3rem]">
+        <h1 className="self-start text-white font-bold text-2xl">{`Welcome home, ${name}`}</h1>
+        <div className="flex flex-row flex-wrap justify-evenly gap-x-7 gap-y-7 h-full w-full">
+          {getCards()}
+        </div>
+      </div>
     </div>
   );
-
-  // return (
-  //   <div className={styles["DiscoverWrapper"]}>
-  //     <div className={styles["Discover"]}>
-  //       <DiscoverMenu />
-  //       {content}
-  //     </div>
-  //   </div>
-  // );
 };
 
 export default Discover;

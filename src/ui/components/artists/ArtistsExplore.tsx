@@ -4,7 +4,7 @@ import { isLoggedInSelector } from "../../../redux/selectors/auth";
 import styles from "./Artists.module.css";
 import { artistsSelector } from "../../../redux/selectors/search";
 import { ArtistPreview } from "./ArtistPreview";
-import ExploreSearch from "../discover/ExploreSearch";
+import DiscoverSearch from "../discover/DiscoverSearch";
 
 const ArtistsExplore = () => {
   const isLoggedIn = useAppSelector(isLoggedInSelector);
@@ -19,7 +19,7 @@ const ArtistsExplore = () => {
       <div className={styles["Panel"]}>
         <div className={styles["Row"]}>
           <div className={styles["PanelElement"]}>Explore Artists</div>
-          {isLoggedIn ? <ExploreSearch item="artists" /> : null}
+          {isLoggedIn ? <DiscoverSearch item="artists" /> : null}
         </div>
       </div>
 

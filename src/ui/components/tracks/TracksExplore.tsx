@@ -1,7 +1,7 @@
 import { useAppSelector } from "../../../hooks";
 import { isLoggedInSelector } from "../../../redux/selectors/auth";
 import { tracksSelector } from "../../../redux/selectors/search";
-import ExploreSearch from "../discover/ExploreSearch";
+import DiscoverSearch from "../discover/DiscoverSearch";
 import TrackPreview from "./TrackPreview";
 import styles from "./Tracks.module.css";
 
@@ -18,7 +18,7 @@ const TracksExplore = () => {
       <div className={styles["Panel"]}>
         <div className={styles["Row"]}>
           <div className={styles["PanelElement"]}>Tracks Explore</div>
-          {isLoggedIn ? <ExploreSearch item="tracks" /> : null}
+          {isLoggedIn ? <DiscoverSearch item="tracks" /> : null}
         </div>
       </div>
 
