@@ -1,29 +1,21 @@
-import { Navigate, Outlet, useLocation } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../../hooks";
-import { isLoggedInSelector } from "../../redux/selectors/auth";
+import { Outlet, useLocation } from "react-router-dom";
 import NavigationMenu from "../components/navigation/NavigationMenu";
-import { useEffect } from "react";
-import { setupForLoggingIn } from "../../thunk/setupForLoggingIn";
+import { AnythingElse } from "./anythingElse";
 
 export const BaseLayout = () => {
   const location = useLocation();
-  const dispatch = useAppDispatch();
-  const isLoggedIn = useAppSelector(isLoggedInSelector);
-
-  useEffect(() => {
-    dispatch(setupForLoggingIn());
-  }, []);
-
-  if (!isLoggedIn && !location?.hash.includes("access_token"))
-    return <Navigate to="/login" replace />;
 
   if (location.pathname === "/" || location.pathname === "")
-    return <Navigate to={{ pathname: "discover" }} />;
+    return <AnythingElse />;
 
   return (
-    <div className="flex flex-row w-[100vw] h-[100vh] overflow-hidden">
+    <div className="flex flex-col-reverse md:flex-row w-[100vw] h-[100vh] overflow-hidden">
       <NavigationMenu />
-      <div className="flex py-[3rem] px-4 w-full h-full items-center justify-center flex-col gap-y-4 bg-[#241623]">
+      <div
+        className={`flex overflow-y-scroll md:overflow-auto w-full h-full items-center justify-center flex-col gap-y-4 bg-gray-100 ${
+          location.pathname === "/not-found" ? "" : "py-[3rem] px-4"
+        }`}
+      >
         <Outlet />
       </div>
     </div>

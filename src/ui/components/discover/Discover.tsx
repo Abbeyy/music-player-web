@@ -4,10 +4,10 @@ import { currentUserNameSelector } from "../../../redux/selectors/auth";
 import { motion } from "framer-motion";
 
 const gradients = [
-  "linear-gradient(300deg, #9c07b3, #1466b9)",
-  "linear-gradient(193deg, #3d3372, #a81679)",
-  "linear-gradient(350deg, #26195e, #b233ab)",
-  "linear-gradient(25deg, #9c24b8, #2449d2)",
+  "linear-gradient(300deg, #586F6B, #A7A794)",
+  "linear-gradient(193deg, #5B7B76, #A7A794)",
+  "linear-gradient(350deg, #586F6B, #7F9183)",
+  "linear-gradient(25deg, #BBBB9C, #8CA591)",
 ];
 
 const Discover = () => {
@@ -17,13 +17,15 @@ const Discover = () => {
     [TOPIC.ALBUMS, TOPIC.ARTISTS, TOPIC.TRACKS, TOPIC.PLAYLISTS].map(
       (topic, idx) => (
         <motion.button
-          className="flex w-[300px] h-[180px] rounded-[8px] bg-pink-100 justify-start items-end"
+          className="flex w-[150px] h-[100px] xs:w-[200px] xs:h-[140px] xs-sm:w-[300px] xs-sm:h-[180px] rounded-[8px] bg-pink-100 justify-start items-end"
           style={{
             background: gradients[idx],
           }}
           whileHover={{ scale: 1.15 }}
         >
-          <h2 className="text-white font-bold text-4xl p-4">{topic}</h2>
+          <h2 className="text-outerSpace font-bold text-lg xs:text-xl xs-sm:text-4xl p-4">
+            {topic}
+          </h2>
         </motion.button>
       )
     );
@@ -31,8 +33,8 @@ const Discover = () => {
   return (
     <div className="flex flex-col w-full h-full">
       <div className="flex w-full h-max self-start h-max flex-col justify-center items-center gap-y-[3rem]">
-        <h1 className="self-start text-white font-bold text-2xl">{`Welcome home, ${name}`}</h1>
-        <div className="flex flex-row flex-wrap justify-evenly gap-x-7 gap-y-7 h-full w-full">
+        <h1 className="self-start text-black font-bold text-2xl">{`Welcome home, ${name}`}</h1>
+        <div className="flex flex-row flex-wrap justify-evenly gap-3 xs-sm:gap-7 h-full w-full">
           {getCards()}
         </div>
       </div>

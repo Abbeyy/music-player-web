@@ -11,7 +11,7 @@ const TopArtists = () => {
   const allArtists = useAppSelector(topArtistsSelector);
 
   const lessArtists =
-    allArtists && allArtists.length > 4 ? allArtists.slice(0, 4) : undefined;
+    allArtists && allArtists.length > 8 ? allArtists.slice(0, 8) : undefined;
 
   const [showMoreArtists, setShowMoreArtists] = useState(false);
 
@@ -32,16 +32,16 @@ const TopArtists = () => {
   const handleShowHide = () => setShowMoreArtists((prevState) => !prevState);
 
   return (
-    <div className="flex flex-col w-max h-max bg-[#291d28] rounded-[8px] px-5 py-4">
-      <p className="text-white text-xl font-bold">Top Artists This Month</p>
-      <p className="text-white font-medium text-md">Only visible to you</p>
+    <div className="flex flex-col w-full h-max bg-white md:rounded-[8px] rounded-[4px] px-3 py-2 md:px-5 md:py-4">
+      <p className="text-black text-xl font-bold">Top Artists This Month</p>
+      <p className="text-black font-medium text-md">Only visible to you</p>
 
-      <div className="flex flex-row space-4 overflow-x-scroll">
+      <div className="grid grid-cols-2 xs:flex xs:flex-row xs:flex-wrap space-1">
         {showMoreArtists ? artistPreviewsShowMore() : artistPreviewsShowLess()}
       </div>
 
       <button
-        className="w-max self-start px-4 py-2 text-white underline font-bold text-md"
+        className="w-max self-start px-2 md:px-8 pt-1 md:py-2 text-black underline font-bold text-sm md:text-md"
         onClick={handleShowHide}
       >
         {showMoreArtists ? "Show Less" : "Show More"}

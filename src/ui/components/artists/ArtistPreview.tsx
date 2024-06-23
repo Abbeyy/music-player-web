@@ -3,20 +3,28 @@ import { useAppDispatch } from "../../../hooks";
 import { getArtistById } from "../../../thunk/artists/getArtist";
 import { Artist } from "../../../types/artist";
 
-import styles from "./Artists.module.css";
+import { useLayoutEffect, useState } from "react";
 
 type Props = {
   artist: Artist;
 };
 
-const size = 180;
-
+const mdSize = 180;
+const smSize = 100;
 export const ArtistPreview = (props: Props) => {
   const { artist } = props;
   const { id, name, popularity, genres, followers, images } = artist;
 
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+
+  const [size, setSize] = useState(window.innerWidth >= 748 ? mdSize : smSize);
+
+  useLayoutEffect(() => {
+    const onResize = () => setSize(window.innerWidth >= 748 ? mdSize : smSize);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
 
   const pp = images[0];
 
@@ -29,7 +37,10 @@ export const ArtistPreview = (props: Props) => {
   return (
     <button
       onClick={getArtist}
-      className="flex flex-col color-white font-bold p-4 m-4 rounded-[8px] w-[12rem] gap-y-4"
+      style={{
+        alignItems: "start",
+      }}
+      className="flex flex-col gap-y-1 md:grid md:col-span-auto items-center gap-x-2 md:gap-x-none color-white font-bold p-1 m-1 md:p-4 md:m-4 md:gap-y-2"
     >
       <img
         src={pp.url}
@@ -45,17 +56,12 @@ export const ArtistPreview = (props: Props) => {
         }}
         alt="Artist"
       />
-      <div className="flex flex-col justify-center items-start">
-        <p className="block uppercase text-white text-xl mb-2 mt-0 truncate max-w-[11.5rem]">
+
+      <div className="flex flex-col self-start max-w-[100vw]">
+        <p className="block text-start font-normal text-black text-sm md:text-lg mb-0 mt-0 truncate max-w-[100px] md:max-w-[180px]">
           {name}
         </p>
-        {/* <p className="block text-md font-medium m-[0.1rem] flex-wrap text-white truncate max-w-[11.5rem]">
-          {`${popularity} popularity score`}
-        </p>
-        <p className="block text-lg font-bold m-[0.1rem] flex-wrap text-white truncate max-w-[11.5rem]">
-          {`${followers.total} followers`}
-        </p> */}
-        <p className="block text-lg font-medium m-[0.1rem] flex-wrap text-white truncate max-w-[11.5rem]">
+        <p className="block text-gray-400 font-normal flex-1 self-start text-xs md:text-md truncate gap-y-1 max-w-[100px] md:max-w-[180px]">
           {genresFormatted}
         </p>
       </div>

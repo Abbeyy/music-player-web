@@ -30,15 +30,18 @@ const Me = () => {
         )}
 
         <div className="flex flex-col">
-          <p className="text-white font-bold text-2xl">{user?.display_name}</p>
+          <p className="text-black font-bold text-2xl">{user?.display_name}</p>
           {user?.followers && (
-            <p className="text-[#F0EFF4] font-bold text-md">{`${user?.followers.total} Followers`}</p>
+            <p className="text-black font-bold text-md">
+              {user?.followers.total}
+              <span className="font-normal">{` followers`}</span>
+            </p>
           )}
-          <p className="text-[#F0EFF4] font-medium text-sm">{user?.country}</p>
+          <p className="text-black font-medium text-sm">{user?.country}</p>
         </div>
       </div>
 
-      <div className="flex flex-col space-y-[2rem] w-full h-full overflow-scroll">
+      <div className="flex flex-col space-y-[2rem] w-full h-full md:overflow-y-scroll">
         <TopTracks />
         <TopArtists />
         {/* <CurrentUsersPlaylists /> */}

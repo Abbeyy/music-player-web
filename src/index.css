@@ -11,3 +11,19 @@ body {
 * {
   font-family: Arial, sans-serif;
 }
+
+/* Scrollbar overrides, where Tailwind doesn't cover */
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d2d4e0;
+  border-radius: 4px;
+}
