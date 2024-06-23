@@ -23,7 +23,7 @@ const Discover = () => {
           }}
           whileHover={{ scale: 1.15 }}
         >
-          <h2 className="text-outerSpace font-bold text-lg xs:text-xl xs-sm:text-4xl p-4">
+          <h2 className="text-white font-bold text-lg xs:text-xl xs-sm:text-4xl p-4">
             {topic}
           </h2>
         </motion.button>
@@ -32,11 +32,12 @@ const Discover = () => {
 
   return (
     <div className="flex flex-col w-full h-full">
-      <div className="flex w-full h-max self-start h-max flex-col justify-center items-center gap-y-[3rem]">
-        <h1 className="self-start text-black font-bold text-2xl">{`Welcome home, ${name}`}</h1>
+      <div className="flex w-full h-max self-start h-max flex-col justify-center items-center gap-y-[2rem]">
         <div className="flex flex-row flex-wrap justify-evenly gap-3 xs-sm:gap-7 h-full w-full">
           {getCards()}
         </div>
+        <hr className="flex w-full h-[0.5px] drop-shadow-lg" />
+        <h1 className="self-start text-black font-bold text-2xl">{`Discover new`}</h1>
       </div>
     </div>
   );

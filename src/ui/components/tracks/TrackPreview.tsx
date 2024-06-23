@@ -37,7 +37,7 @@ const TrackPreview = (props: Props) => {
   return (
     <div
       style={{ alignItems: "start" }}
-      className="flex flex-row gap-y-2 md:grid md:col-span-auto items-center gap-x-2 md:gap-x-none color-white font-bold p-1 m-1 md:p-4 md:m-4 md:gap-y-2"
+      className="flex flex-row gap-y-2 md:grid md:col-span-auto items-center gap-x-2 md:gap-x-none color-white font-bold p-1 m-1"
     >
       {pp.url && is_playable ? (
         <ReactPlayer
@@ -73,7 +73,7 @@ const TrackPreview = (props: Props) => {
             <p className="block text-feldgrauAccent flex-1 self-start text-xs md:text-md">{`E`}</p>
           )}
           <p
-            className={`block text-gray-400 text-xs md:text-md font-medium ${
+            className={`block text-outerSpace text-xs md:text-md font-medium ${
               explicit ? "self-start flex-0" : ""
             }`}
           >

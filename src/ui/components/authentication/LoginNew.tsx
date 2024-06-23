@@ -51,7 +51,7 @@ export const Login = () => {
         </div>
 
         <motion.button
-          className="flex px-3 py-2 hover:bg-battleshipGreyHover md:px-4 md:py-3 items-center justify-center rounded-[4px] bg-battleshipGrey text-black text-sm md:text-md font-bold"
+          className="flex px-3 py-2 hover:bg-battleshipGreyHover md:px-4 md:py-3 items-center justify-center rounded-[4px] bg-battleshipGrey text-white text-sm md:text-md font-bold"
           onClick={handleLogin}
           whileTap={{ scale: 0.85 }}
         >

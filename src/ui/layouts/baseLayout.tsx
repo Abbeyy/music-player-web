@@ -13,7 +13,7 @@ export const BaseLayout = () => {
       <NavigationMenu />
       <div
         className={`flex overflow-y-scroll md:overflow-auto w-full h-full items-center justify-center flex-col gap-y-4 bg-gray-100 ${
-          location.pathname === "/not-found" ? "" : "py-[3rem] px-4"
+          location.pathname === "/not-found" ? "" : "p-[2rem]"
         }`}
       >
         <Outlet />

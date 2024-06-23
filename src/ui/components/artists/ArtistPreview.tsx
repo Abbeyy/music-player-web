@@ -40,7 +40,7 @@ export const ArtistPreview = (props: Props) => {
       style={{
         alignItems: "start",
       }}
-      className="flex flex-col gap-y-1 md:grid md:col-span-auto items-center gap-x-2 md:gap-x-none color-white font-bold p-1 m-1 md:p-4 md:m-4 md:gap-y-2"
+      className="flex flex-col gap-y-1 md:grid md:col-span-auto items-center gap-x-2 md:gap-x-none color-white font-bold p-1 m-1"
     >
       <img
         src={pp.url}

@@ -7,7 +7,7 @@ import { RxAvatar } from "react-icons/rx";
 
 enum ActiveItem {
   discover = "discover",
-  Me = "Me",
+  me = "me",
 }
 
 const NavigationBar = () => {
@@ -22,41 +22,59 @@ const NavigationBar = () => {
 
   let active: ActiveItem | null = null;
   if (location.pathname === "/discover") active = ActiveItem.discover;
-  else if (location.pathname === "/me") active = ActiveItem.Me;
+  else if (location.pathname === "/me") active = ActiveItem.me;
 
   return (
-    <div className="flex flex-row md:flex-col border-t-[0.5px] md:border-t-0 md:border-r-[0.5px] border-[#b5a8b4] items-center justify-between px-[1rem] md:py-[4rem] bg-feldgrau w-[100vw] min-h-[70px] md:min-w-[150px] md:w-[150px] md:h-[100vh]">
+    <div className="flex shadow-[inset_-10px_-10px_10px_#546461] flex-row md:flex-col-reverse border-t-[0.5px] md:border-t-0 md:border-r-[0.5px] border-[#b5a8b4] items-center justify-between px-[1rem] md:py-[2.5rem] bg-feldgrau w-[100vw] min-h-[70px] md:min-w-[150px] md:w-[180px] md:h-[100vh]">
       <button
         className="flex flex-row items-center gap-x-2 px-3 py-2 rounded-[8px] hover:bg-feldgrauHover"
         onClick={logout}
       >
-        <IoLogOut size={28} color="white" />
-        <p className="text-white text-xs font-semibold text-nowrap">LOG OUT</p>
+        <IoLogOut size={28} color="black" />
+        <p className="text-black text-xs font-semibold text-nowrap">LOG OUT</p>
       </button>
 
       <div className="flex flex-row md:flex-col gap-6 justify-evenly items-start">
         <Link
           className={`flex flex-row items-center gap-x-2 px-3 py-2 rounded-[8px] ${
             active === ActiveItem.discover
-              ? "bg-smoky hover:bg-smokyHover"
+              ? "bg-platinum hover:bg-timberWolf"
               : "hover:bg-feldgrauHover"
           }`}
           to={{ pathname: "discover", hash: location.hash }}
         >
-          <IoHome size={24} color="white" />
-          <p className="text-white text-xs font-semibold">DISCOVER</p>
+          <IoHome
+            size={24}
+            color={active === ActiveItem.discover ? "#3C4040" : "black"}
+          />
+          <p
+            className={`${
+              active === ActiveItem.discover ? "text-onyx" : "text-black"
+            } text-xs font-semibold`}
+          >
+            DISCOVER
+          </p>
         </Link>
 
         <Link
           className={`flex flex-row items-center gap-x-2 px-3 py-2 rounded-[8px] ${
-            active === ActiveItem.Me
-              ? "bg-smoky hover:bg-smokyHover"
+            active === ActiveItem.me
+              ? "bg-platinum hover:bg-timberWolf"
               : "hover:bg-feldgrauHover"
           }`}
           to={{ pathname: "me", hash: location.hash }}
         >
-          <RxAvatar size={24} color="white" />
-          <p className="text-white text-xs font-semibold">ME</p>
+          <RxAvatar
+            size={24}
+            color={active === ActiveItem.me ? "#3C4040" : "black"}
+          />
+          <p
+            className={`${
+              active === ActiveItem.me ? "text-onyx" : "text-black"
+            } text-xs font-semibold`}
+          >
+            ME
+          </p>
         </Link>
       </div>
     </div>
