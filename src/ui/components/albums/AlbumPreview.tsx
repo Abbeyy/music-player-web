@@ -1,7 +1,5 @@
 import { Album } from "../../../types/album";
 
-import styles from "./Albums.module.css";
-
 type Props = {
   album: Album;
 };
@@ -17,25 +15,32 @@ export const AlbumPreview = (props: Props) => {
   const artistsFormatted = artists.map((artist) => artist.name).join(", ");
 
   return (
-    <div className={styles["AlbumPreview"]}>
+    <div
+      style={{ alignItems: "start" }}
+      className="flex gap-y-2 grid col-span-auto items-center gap-x-none color-white font-bold p-1 m-1"
+    >
       <img
         src={pp.url}
         style={{
           width: size,
           height: size,
+          maxHeight: size,
+          maxWidth: size,
           objectFit: "cover",
           objectPosition: "100% 0%",
           aspectRatio: "auto",
-          borderRadius: 100,
+          borderRadius: 8,
         }}
         alt="Album"
       />
-      <div className={styles["AlbumNameWrapper"]}>
-        <p className={styles["AlbumName"]}>{name}</p>
+      <div className="flex self-start flex-col w-full max-w-[180px]">
+        <p className="block font-normal text-black text-sm md:text-lg mb-0 mt-0 truncate">
+          {name}
+        </p>
+        <p className="block text-outerSpace text-xs md:text-md font-medium">
+          {`${new Date(release_date).getFullYear()} • ${artistsFormatted}`}
+        </p>
       </div>
-      <p className={styles["AlbumInfo"]}>{`${new Date(
-        release_date
-      ).getFullYear()} • ${artistsFormatted}`}</p>
     </div>
   );
 };

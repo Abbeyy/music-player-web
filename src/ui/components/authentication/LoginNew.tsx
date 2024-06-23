@@ -3,7 +3,6 @@ import { useAppDispatch, useAppSelector } from "../../../hooks";
 import { motion } from "framer-motion";
 import { Navigate, useLocation } from "react-router-dom";
 import { isLoggedInSelector } from "../../../redux/selectors/auth";
-import { colours } from "../../../utils/colourPalette";
 
 export const Login = () => {
   const dispatch = useAppDispatch();
