@@ -6,6 +6,9 @@ import { AlbumPreview } from "../albums/AlbumPreview";
 import { getAlbumNewReleases } from "../../../thunk/album/newReleases";
 import { useEffect } from "react";
 import Carousel from "react-multi-carousel";
+import { getTrackRecommendations } from "../../../thunk/tracks/recommendations";
+import { tracksRecommendationsSelector } from "../../../redux/selectors/tracks";
+import TrackPreview from "../tracks/TrackPreview";
 
 const gradients = [
   "linear-gradient(300deg, #586F6B, #A7A794)",
@@ -38,9 +41,11 @@ const Discover = () => {
 
   useEffect(() => {
     dispatch(getAlbumNewReleases());
+    dispatch(getTrackRecommendations());
   }, []);
 
   const newAlbums = useAppSelector(albumNewReleasesSelector);
+  const newTracks = useAppSelector(tracksRecommendationsSelector);
 
   const getCards = () =>
     [TOPIC.ALBUMS, TOPIC.ARTISTS, TOPIC.TRACKS, TOPIC.PLAYLISTS].map(
@@ -78,6 +83,19 @@ const Discover = () => {
           >
             {!!newAlbums?.items?.length &&
               newAlbums.items.map((album) => <AlbumPreview album={album} />)}
+          </Carousel>
+        </div>
+        <div className="flex w-full h-min">
+          <Carousel
+            infinite
+            swipeable
+            draggable={false}
+            customTransition="all .5"
+            className="flex w-full h-full overflow-none"
+            responsive={responsive}
+          >
+            {!!newTracks?.tracks?.length &&
+              newTracks.tracks.map((track) => <TrackPreview track={track} />)}
           </Carousel>
         </div>
       </div>

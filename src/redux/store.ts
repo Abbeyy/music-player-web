@@ -6,6 +6,7 @@ import AuthReducer from "./reducers/authSlice";
 import PlaylistReducer from "./reducers/playlistsSlice";
 import SearchReducer from "./reducers/searchSlice";
 import TopItemsReducer from "./reducers/topItemsSlice";
+import TrackReducer from "./reducers/tracksSlice";
 
 export const store = configureStore({
   reducer: {
@@ -15,6 +16,7 @@ export const store = configureStore({
     playlist: PlaylistReducer,
     search: SearchReducer,
     topItems: TopItemsReducer,
+    tracks: TrackReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

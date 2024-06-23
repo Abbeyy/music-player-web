@@ -6,3 +6,7 @@ export const GET_CURRENT_USERS_PLAYLISTS =
 export const GET_ARTIST = "https://api.spotify.com/v1/artists";
 export const GET_ALBUM_NEW_RELEASES =
   "https://api.spotify.com/v1/browse/new-releases";
+export const GET_TRACKS_RECOMMENDATIONS =
+  "https://api.spotify.com/v1/recommendations";
+export const GET_GENRE_SEEDS =
+  "https://api.spotify.com/v1/recommendations/available-genre-seeds";
